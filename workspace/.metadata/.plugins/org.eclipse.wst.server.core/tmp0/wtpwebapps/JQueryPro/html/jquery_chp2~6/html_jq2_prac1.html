@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// type이 button인 input 요소와 href가 'mailto'로 시작하는 a요소의 배경색 노란색으로 변경
+				$('input[type="button"], a[href^="mailto"]')
+					.css("backgroundColor","yellow");
+				
+				// href가 'power2c'를 포함하는 모든 a 요소의 밑줄 없음
+				$('a[href*="power2c"]').css("textDecoration","none");
+				
+				//img태그의 기본 border 설정
+				$('img').css("border","2px solid black");
+				// img 요소 중 id 가 'img1'인 것 제외하고 테두리 색 파랑
+				$('img[id!="img1"]').css("borderColor","blue");
+				// src가 'png'로 끝나는 img 요소의 테두리 색 초록
+				$('img[src$="png"]').css("borderColor","green");
+				
+				// alt 속성을 갖는 이미지 요소의 테두리 두께 5px
+				$('img[alt]').css("border-width","5px");
+				// title이 'named' 단어를 포함하는 img 요소 두 줄 테두리
+				$('img[title*="named"]').css("border-style","double");
+				// id가 'little'이거나 'little-'로 시작하는 img 요소 점선 테두리
+				//$('img[id="little"],img[id^="little-"]').css("border-style","dotted");
+				$('img[id|="little"]').css("border-style","dotted");
+				
+				// type이 'text'인 input 요소의 테두리 변경
+				$('input[type="text"]').css("border","solid 2px red");
+			})
+		</script>
+		<style type="text/css">
+			img{
+			width: 75px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<a style="" href="http://www.ddit.or.kr" target="_blank">(재)대덕 인재 개발원</a>
+			<br>
+			<a href="mailto:power2c@ddit.or.kr">power2c에게 메일보내기</a>
+		</div>
+		<div id="pDiv">
+			<p>Some images:</p>
+		</div>
+		<div id="imgDiv">
+			<img id="img1" alt="flowerPic" src="../../images/flowers.jpg">
+			<img id="little" src="../../images/flowers.jpg">
+			<img id="little-bear" alt="flowerPic" src="../../images/flowers.jpg">
+			<img id="img4" title="name" src="../../images/flowers.jpg">
+			<img id="img5" title="named" alt="flowerPic" src="../../images/flowers.jpg">
+			<img id="img6" src="../../images/flowers.jpg">
+			<img id="img7" style="width: 150px; border " src="../../images/flowers.png">
+		</div>
+		<div id="someDiv">
+			<p>이곳은 ID 속성이 someDiv인 &lt;div&gt;태그입니다.</p>
+		</div>
+		<input type="text"><br>
+		<button>Submit</button>
+		<input type="button" value="클릭">
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>JSON practice</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			var obj = {
+					  name : "홍길동"
+					, birth : "1425-12-14"
+					, age : 30
+					, hobby : ["무술", "검술", "독서"]
+					, address : {
+						  city : "대전광역시"
+						, gu : "대덕구"
+						, dong : "대흥동"
+					}
+			};
+			
+			$(document).ready(function(){
+				$('#jsonTransfer').click(function(){
+					// 1차 변환
+					// object -> string으로 변환 = JSON.stringify(obj)
+					var strTmp = JSON.stringify(obj);
+					$("#spanFirst").text(strTmp);
+					// 2차 변환
+					// string -> object로 변환 = JSON.parse(string)
+					var objTmp = JSON.parse(strTmp);
+					$('#spanSecond').text(objTmp);
+					
+					// 3차 변환
+					
+					
+				});
+
+			};
+		</script>
+	</head>
+	<body>
+		<button type="button" id="jsonTransfer">JSON 변환 테스트</button>
+		<p>1차 변환(obj > str) <span id="spanFirst"> </span></p>
+		<p>2차 변환(str > obj) <span id="spanSecond"> </span></p>
+		<p>이름 : <span id="name"> </span></p>
+		<p>주소 : <span id="address"> </span></p>
+		<p>취미 : <span id="hobby"> </span></p>
+		<p>생년월일 : <span id="birth"> </span></p>
+	</body>
+</html>

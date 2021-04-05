@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('p').click(function(){
+					var obj = $("<img alt='addImg'>")
+					var src = "../../images" + $(this).attr("title");
+					obj.prop("src",src);
+					$(this).append(obj);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div>
+			<p title="Flowers.jpg">꽃</p>
+			<p title="lion.jfif">사자</p>
+			<p title="spngebob">스펀지밥</p>
+		</div>
+	</body>
+</html>

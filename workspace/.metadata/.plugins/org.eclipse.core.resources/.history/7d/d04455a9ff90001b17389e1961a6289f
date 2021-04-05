@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// p태그에 마우스 올리면 글자색 변경, 크기 1.5배
+				// p태그에 마우스 내리면 원래대로 돌아감
+				// 방법 1 : mouseover / mouseout 이벤트 직접 바인딩
+// 				$('p').mouseover(function(){
+//					~~
+// 				})
+// 				$('p').mouseout(function(){
+//					~~
+// 				})
+
+				// 방법 2 : on 메소드 사용해서 이벤트 바인딩 - 동적
+				$('p').on("mouseover",function(){
+					$(this).css("color","red").css("font-size","1.5em");
+				});
+				$('p').on("mouseout",function(){
+					$(this).css("color","").css("font-size","");
+				});
+
+				// 방법 3 : on 메소드 한번만 사용하여 이벤트 바인딩
+// 				$('p').on({
+// 					mouseover : function(){
+// 						~~
+// 					}
+// 				,	mouseout : function(){
+// 						~~
+// 					}
+// 				})
+
+			})
+		</script>
+	</head>
+	<body>
+		<p>마우스를 올려보세요</p>
+	</body>
+</html>

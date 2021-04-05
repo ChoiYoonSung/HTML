@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('td:nth-child(1)').css('backgroundColor','#666666');
+				$('td:nth-child(2)').css('backgroundColor','#999999');
+				$('td:nth-child(3)').css('backgroundColor','#BBBBBB');
+				
+				$('td:nth-child(3n+1)').css('backgroundColor','#666666');
+				$('td:nth-child(3n+2)').css('backgroundColor','#999999');
+				$('td:nth-child(3n)').css('backgroundColor','#BBBBBB');
+			})
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>이름</td>
+				<td>주소</td>
+				<td>전화번호</td>
+				<td>이름</td>
+				<td>주소</td>
+				<td>전화번호</td>
+			</tr>
+			<tr>
+				<td>홍길동</td>
+				<td>대전</td>
+				<td>010-222-333</td>
+				<td>홍길동</td>
+				<td>대전</td>
+				<td>010-222-333</td>
+			</tr>
+			<tr>
+				<td>진달래</td>
+				<td>서울</td>
+				<td>010-444-555</td>
+				<td>진달래</td>
+				<td>서울</td>
+				<td>010-444-555</td>
+			</tr>
+			<tr>
+				<td>개나리</td>
+				<td>부산</td>
+				<td>010-555-999</td>
+				<td>개나리</td>
+				<td>부산</td>
+				<td>010-555-999</td>
+			</tr>
+			<tr>
+				<td>무궁화</td>
+				<td>대구</td>
+				<td>010-555-999</td>
+				<td>무궁화</td>
+				<td>대구</td>
+				<td>010-555-999</td>
+			</tr>
+		</table>
+	</body>
+</html>

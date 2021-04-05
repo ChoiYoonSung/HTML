@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>객체 생성 방법</title>
+	<script type="text/javascript">
+    //상수로 객체 생성하는 방법
+	   var myCar = {
+			   model : "GV80",
+			   color : "blue",
+			   year : 2002,
+			   speed : 0,
+			   brake : function (){
+				   // 속도 줄이기 (speed)
+				   this.speed -= 10;
+			   },
+			   accel : function () {
+				   // 속도 올리기 (speed)
+				   this.speed += 10;
+			   }
+	   };
+	   
+	   //alert(myCar.color);
+	   document.write(myCar.color);
+	   document.write("<br>");
+	   document.write("색상변경");
+	   document.write("<br>");
+	   
+	   
+	   myCar.color = "red";
+	   //alert(myCar.color);
+	   document.write(myCar.color);
+	   document.write("<br>");
+	   
+	   //alert(myCar.speed);
+	   document.write(myCar.speed + "<br>");
+	   myCar.brake();
+	   //alert(myCar.speed);
+	   document.write(myCar.speed + "<br>");
+	   
+	   //생성자로 객체 생성
+	   function Car(model, color, speed){
+		   this.model = model;
+		   this.color = color;
+		   this.speed = speed;
+		   
+		   this.brake = function(){
+			   this.speed -= 10;
+		   }
+		   this.accel = function(){
+			   this.speed += 10;
+		   }
+	   }
+	   
+	   var hongCar = new Car("GV70", "red", 0);
+	   var leeCar = new Car("GVV80", "blue", 0);
+	   
+	   //보고싶을 때.
+	   hongCar.color
+	   
+	   //값을 바꿀 때 
+	   hongCar.color = "white";
+	   
+	   //함수 보고싶을때
+	   hongCar.brake();
+	   
+	   //object를 배열로 변환 - Object.values()
+	   var person = {
+		   name : "홍길동"
+		   ,age : 20
+		   ,city : "대전"
+		   ,nation : "대한민국" 
+	   };
+	   var tmp = Object.values(person);
+	   //alert(tmp);
+// 	    document write는 창을 띄어서 거기에 텍스트를 작성하는 것이므로 이전의 데이터가 사라진다.
+	   document.write(tmp);
+	   
+	   //Object.values : 디버깅할때 많이 사용함.
+	   //var tmp2 = Object.values(person[2]);
+	   //document.write(tmp2);
+	   
+	   
+// 	   Object를 문자로 변환 - JSON.stringify()
+//      JSON 표기법""안에 들어갔으므로 문자로 취급 {"name":"홍길동","age":"30"} 
+//      => cf) 배열{name: "홍길동", age:"30"}
+       var tmp1 = JSON.stringify(person);
+       document.write("<br>" + tmp1);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

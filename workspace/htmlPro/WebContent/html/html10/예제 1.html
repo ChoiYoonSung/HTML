@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function readFile(){
+			//document.getElementById("attachFile"); // input
+			var files = document.getElementById("attachFile").files; // FileList
+// 			files[0] ==> File객체
+			var file = files[0];
+			
+			// textarea에 담을 문자 만들기
+			var str = "";
+			str += "파일명 : " + file.name + "\n"; // 파일명
+			str += "파일크기 : " + file.size + "\n"; // 파일크기
+			str += "파일타입 : " + file.type + "\n"; // 파일타입
+			str += "시간 : " + file.lastModifiedDate + "\n"; // 파일명
+		
+			document.getElementById("result").innerHTML = str;
+		}
+	
+		
+		function readFileContent() {
+			var files = document.getElementById("attachFile").files;
+			
+			var file = files[0];
+			var reader = new FileReader(); // 파일을 읽기 위한 객체
+			reader.readAsText(file);  //파일을 읽어서 reader에 담기
+			// 파일을 읽어서 FileReader객체의 result 속성에 담는다.
+			
+			// 파일 읽기가 끝나면
+			reader.onload = function () {}
+				// onload 이벤트에서 수행할 내용
+				
+			document.getElementById("result").innerHTML = 
+			reader.result;
+		}	
+	</script>
+</head>
+<body>
+	<input type = "file" id="attachFile">
+	<button type="button" onclick="readFile()">파일정보</button><br><br>
+	<button type="button" onclick="readFileContent()">파일내용</button><br><br>
+	<textarea rows=6" cols="100" id="result"></textarea>
+	<br>
+</body>
+</html>

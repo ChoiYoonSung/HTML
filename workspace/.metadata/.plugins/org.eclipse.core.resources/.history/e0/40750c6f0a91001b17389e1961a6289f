@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			div{
+				border: 3px dotted #FF88FF;
+			}
+		</style>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#btnHide').click(function(){
+					$('p','#div1').hide(100);
+				});
+				$('#btnShow').click(function(){
+					$('p','#div1').show(100);
+				});
+				$('#btnToggle').click(function(){
+					$('#div1').toggle(100);
+				});
+				//----------------------------------------
+				
+				$('#btnFadeIn').click(function(){
+					$('p','#div2')
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<button type="button" id="btnHide">Hide</button>
+		<button type="button" id="btnShow">Show</button>
+		<br>
+		<button type="button" id="btnToggle">Toggle</button>
+		<div id="div1">
+			<p>안녕하십니까?
+			<br>
+			안녕히 가십시오.</p>
+		</div>
+		<br><hr><br>
+		<span><p>FadeIn / FadeOut</p></span>
+		<button type="button" id="btnFadeIn">fadeIn</button>
+		<button type="button" id="btnFadeOut">fadeOut</button>
+		<br>
+		<button type="button" id="btnFadeToggle">fadeToggle</button>
+		<div id="div2">
+			<p>안녕하십니까?
+			<br>
+			안녕히 가십시오.</p>
+		</div>
+		
+	</body>
+</html>

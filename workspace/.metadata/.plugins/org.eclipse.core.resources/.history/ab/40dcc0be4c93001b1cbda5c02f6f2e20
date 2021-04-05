@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// 첫 번쨰 노란색 배경
+				$('li').first().css("backgroundColor","yellow");
+
+				// 각 리스트의 첫 번째 li에 빨간색 테두리
+				$('li:first-child').css("border","2px solid red");
+			})
+		</script>
+	</head>
+	<body>
+		<ol>
+			<p>Special List - woman</p>
+			<li>1. 다 되는 남자</li>
+			<li>2. 능력있는 남자</li>
+			<li>3. 돈 많은 남자</li>
+			<li>4. 잘 생긴 남자</li>
+		</ol>
+		<ol>
+			<p>Special List - man</p>
+			<li>1. 다 되는 여자</li>
+			<li>2. 능력있는 여자</li>
+			<li>3. 예쁜 여자</li>
+			<li>4. 돈 많은 여자</li>
+		</ol>
+	</body>
+</html>

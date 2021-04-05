@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Date 객체</title>
+		<script>
+			//오늘 날짜
+			var today = new Date();
+			document.write(today + "<br>");//Tue Mar 16 2021 11:52:36 GMT+0900 (대한민국 표준시)
+			var time = today.getTime();//1615863156946
+			document.write(time + "<br>");
+			
+			//얼마나 지났나 보려면 밀리세컨드(milsec) 단위로 변경한 뒤 사용한다.
+			//3일 뒤 날짜 계산
+			//오늘 날짜에 3일을 더하면 된다.
+			//3일치를 Time으로 변경한다.
+			//(일 수 * 24시간)(3일) * 60분(1시간) * 60초(1분) * 1000msc(1초)
+			var addTime = 3 * 24 * 60 * 60 * 1000;
+			//3일뒤의 시간이 됨
+			var todayAfterTime = time + addTime;
+			document.write(todayAfterTime + "<br>");//1616122356946
+			var todayAfter = new Date(todayAfterTime);
+			document.write(todayAfter + "<br>");//Fri Mar 19 2021 11:52:36 GMT+0900 (대한민국 표준시)
+			
+			var resultTime = time + addTime;
+			var resultDay = new Date(resultTime);
+			
+			document.write(resultTime + "<br>");
+			document.write(resultDay + "<br>");
+			
+			document.write("<hr>");
+			
+			function checkDate(){
+				// 오늘 날짜와 구입일자를 비교
+				// 구입일자
+				var buyDate = new Date(document.getElementById("buyDate").value)
+				var buyTime = buyDate.getTime(); // 구입일자 => 시간
+				
+				// 현재일자
+				var curTime = (new Date()).getTime();
+				
+				var tmpTime = curTime - buyTime;
+				
+				var tmpDay = tmpTime/1000/60/60/24;
+				
+				alert("구매한지 " + parseInt(tmpDay) + "일이 지났습니다.");
+				
+				if(parseInt(tmpDay) > 7){
+					alert("교환/환불이 불가합니다.")
+				}
+			}
+		</script>
+	</head>
+	<body>
+		구입일자 : <input type="date" id="buyDate">
+		<button type="button" onclick="checkDate()">확인</button>
+	
+	</body>
+</html>

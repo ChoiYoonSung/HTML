@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>1. 두 숫자와 하나의 연산자 입력 </title>
+	</head>
+	<body>
+		<h1>1. 두 숫자와 하나의 연산자 입력</h1><br>
+        <p>숫자 2개와 연산자 1개를 입력 받아 연산자에 맞는 계산결과를 출력하는 프로그램을 작성하시오.</p><br>
+		<script type="text/javascript">
+            var a = prompt("첫 번째 숫자를 입력하십시오.");
+            var op = prompt("(+,-,*,/,% 중 하나)");
+            var b = prompt("두 번째 숫자를 입력하십시오.");
+            var ab;
+            
+            a = parseInt(a);
+            b = parseInt(b);
+            
+
+            switch(op){
+                case '+':
+                   ab = a + b;
+                   break;
+                case '-':
+                    ab = a - b;
+                    break;
+                case '*':
+                    ab = a * b;
+                    break;
+                case '/':
+                    ab = a / b;
+                    break;
+                case '%':
+                    ab = a % b;
+                    break;
+                default:
+                    alert("입력값에 문제가 있습니다.");
+                	break;
+            }
+            document.write(a + op + b + " = " + ab); 
+		
+		</script>
+	</body>
+</html>

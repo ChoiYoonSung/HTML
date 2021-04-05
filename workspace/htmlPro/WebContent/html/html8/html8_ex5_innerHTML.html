@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>요소 내용 바꾸기 - innerHTML</title>
+	</head>
+	<body>
+		<h1 id="heading">Heading</h1>
+		<button type="button" onclick="func()">클릭</button>
+		
+		<script type="text/javascript">
+			function func(){
+				var ele = document.getElementById("heading");
+				var tmp = ele.innerHTML;
+				alert(tmp);
+				
+//				ele.innerHTML = "Change Heading"
+				document.getElementById("heading").innerHTML = "Change Heading"
+			}
+		</script>
+	</body>
+</html>

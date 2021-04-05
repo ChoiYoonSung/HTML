@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			div{
+				border: 1px solid lime;
+				height: 10px;
+			}
+		</style>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript"></script>
+	</head>
+	<body>
+		<div></div><br>
+		<div>
+			Hello
+			<span>World</span>
+		</div><br>
+		<p>Hello jQuery
+		<span>Thanks, jQuery</span></p>
+		<br>
+		<div>jQuery</div><br>
+		<span>쉬운 jQuery</span><br>
+		<div></div><br>
+		<hr color="blue"><br>
+	</body>
+</html>

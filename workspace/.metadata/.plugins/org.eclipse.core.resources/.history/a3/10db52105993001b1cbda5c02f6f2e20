@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript"></script>
+	</head>
+	<body>
+		<form>
+			<label for="id">I D : </label>
+			<input type="text" id="id" value=""><br>
+			<label for="name">이름 : </label>
+			<input type="text" id="name" value=""><br>
+			성별 : 
+				<input type="radio" id="male" value="M">
+				<label for="male">남자</label>
+				<input type="radio" id="female" value="F">
+				<label for="female">여자</label>
+		</form>
+	</body>
+</html>

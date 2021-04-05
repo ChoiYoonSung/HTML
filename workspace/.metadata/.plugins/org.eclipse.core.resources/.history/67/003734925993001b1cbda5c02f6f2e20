@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript"></script>
+	</head>
+	<body>
+		<form>
+			<label for="id">I D : </label>
+			<input type="text" id="id" value=""><br>
+			<span style="display: none;">ID가 중복됩니다.</span>
+			<label for="name">이름 : </label>
+			<input type="text" id="name" value=""><br>
+			<span style="display: none;">이름을 입력하세요</span>
+			성별 : 
+				<input type="radio" id="male" name="gender" value="M">
+				<label for="male">남자</label>
+				<input type="radio" id="female" name="gender" value="F">
+				<label for="female">여자</label><br>
+			<button type="button">hidden요소</button>
+			<button type="button">visible요소</button>
+		</form>
+	</body>
+</html>

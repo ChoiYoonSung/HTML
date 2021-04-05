@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			div{
+				border: 3px dotted #FF88FF;
+			}
+		</style>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			
+		</script>
+	</head>
+	<body>
+		<button type="button">Hide</button>
+		<button type="button">Show</button>
+		<br>
+		<button type="button">Toggle</button>
+		<div>
+			안녕하십니까?
+			<br>
+			안녕히 가십시오.
+		</div>
+		
+	</body>
+</html>

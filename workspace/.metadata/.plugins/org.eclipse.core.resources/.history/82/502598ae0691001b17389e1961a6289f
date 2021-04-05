@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// 사용자 정의 함수 사용하기
+				$('p',"#div1").on("myOwnEvent", function(e, name){
+					alert(name);
+				});
+				
+				// 이벤트를 강제로 발생시키는 메소드 - trigger()
+// 				$('p').trigger("click");
+				$('button',"#div1").click(function(){
+					$('p').trigger("myOwnEvent","asdf");
+				});
+				
+				//trigger와 triggerHandler 비교
+				$('input','#div2').focus(function(){
+					$('<span>포커스</span>').appendTo('#div2').fadeIn(1000);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<button type="button">Trigger</button>
+			<p>안녕하세요</p>
+			<input type="text">
+			<br><br>
+			<hr>
+		</div>
+		<div id="div2">
+			<h3>trigger와 triggerHandler</h3>
+			<button id="old">trigger</button>
+			<button id="new">trigger handler</button>
+			<br><br>
+			<input type="text" value="To Be Focused">
+		</div>
+	</body>
+</html>

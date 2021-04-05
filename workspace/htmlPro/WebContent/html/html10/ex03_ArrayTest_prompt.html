@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>문제 풀이</title>
+</head>
+<body>
+<script>
+//배열 생성
+//var arrays = new array[];는 사용 안하는것이 좋다.
+var arrays = [];//array 객체 초기화
+//반복
+while(true){
+	//사람의 이름을 입력받음(prompt)
+    var userName = prompt("사람의 이름을 입력하세요");
+	//취소버튼 : null
+	//사용자 입력 공백 : ""
+    if(userName == null || userName == ""){
+        break;
+    }else{
+        //배열에 삽입
+        arrays.push(userName);
+    }
+}
+//저장된 이름을 출력
+document.write(arrays);
+document.write(arrays.length);
+
+//contirm은 확인버튼 클릭하면 true / 취소버튼 클릭하면 false로 뜬다.
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>JQUERY 기본</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$('body').css('background-color','yellow');
+			$('h1').css('color','red');
+			$('.sample').css('color','green');
+			$('#tmp').css('color','blue');
+			
+			//문서 로딩 후 요소에 이벤트 추가(Binding)
+			//h2 요소에 클릭 이벤트 설정
+			$('h2').click(function(){
+				$(this).hide(this)
+			});
+		});
+		function hide(ele){
+			$(ele).hide();
+		}
+		
+		</script>
+	</head>
+	<body>
+		<h1 onclick="hide(this)">JQuery 테스트1</h1>
+		<h2 class="sample">JQuery 테스트2</h2>
+		<h2 id="tmp">JQuery 테스트3</h2>
+	</body>
+</html>

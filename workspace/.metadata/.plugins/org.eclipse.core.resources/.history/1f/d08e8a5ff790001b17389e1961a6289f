@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('div').click(function(e){
+					$(this).css("border","2px solid #FF7F50");
+					e.stopPropagation;
+				});
+				
+				$('span').click(function(){
+					$(this).css("border","2px solid black");
+					return false;
+				});
+				
+				$('button').click(function(){
+					$(this).css("border","2px solid red");
+					return false;
+				});
+				
+				var today = (new Date()).getFullYear();
+				$('a').click(function(e){
+					var birth = prompt("태어난 연도를 입력하십시오.");
+					if((today- birth) < 19 && (today - birth) > 0){
+						alert("사이트에 접속하지 못합니다.");
+						e.preventDefault();
+					}else if ((today - birth) < 0){
+						alert("잘못된 입력 입니다.");
+						e.preventDefault();
+					};
+				});
+			});
+		</script>
+		<style type="text/css">
+			div{
+				background-color: aqua;
+				height: 300px;
+				width: 400px;
+			}
+			span{
+				background-color: yellow;
+				height: 100px;
+				width: 200px;
+				display: inline-block;
+				margin: 100px;
+			}
+			button {
+				margin: 75px;
+				margin-bottom: 35px;
+				margin-top: 35px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<span>
+				<button type="button">클릭</button>
+			</span>
+		</div>
+		<br>
+		<hr color="red">
+		<br>
+		<a href="https://www.google.com" target="_blank">google</a>
+	</body>
+</html>

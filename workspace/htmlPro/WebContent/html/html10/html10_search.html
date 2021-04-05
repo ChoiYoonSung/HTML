@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function addtext() {
+				var node = document.createTextNode(document.getElementById("input_text1").value) + "<br>";
+				document.getElementById("target").appendChild(node);
+			}
+			
+			var cnt = 20;
+			function addPic(){
+				var obj = document.getElementsByTagName("li");
+				cnt += 5;
+				
+				var arrImgSrc = ["coffee.jfif", "coffee2.jpg", "spongebob.jpg","coffee.jfif", "snoopy.gif"]
+				for (var i = 0; i < obj.length; i++) {
+					var picObj = document.createElement('img'); //<li>
+					
+					picObj.alt = "img_alt" + (i+1);
+					picObj.src="../source/" + arrImgSrc[i];
+					picObj.height= parseInt(cnt);
+					
+					obj[i].appendChild(picObj);
+				}
+			}
+			
+			function removeChild(){
+				var parentEle = document.getElementById("target");
+				var childEle = document.getElementById("p1");
+				parentEle.removeChild(childEle);
+			}
+			
+			function round_pic(e, num){
+				var arrImgs = document.getElementsByTagName("img");
+				for (var i = 0; i < arrImgs.length; i++) {
+					arrImgs[i].remove();
+				}
+				
+				var arrImgSrc = ["coffee.jfif", "coffee2.jpg", "spongebob.jpg","coffee.jfif", "snoopy.gif"]
+				var picObj = document.createElement('img');
+				
+				picObj.alt = "img_alt" + num;
+				picObj.src = "../source/" + arrImgSrc[num];
+				picObj.width= "50";
+				
+				e.appendChild(picObj);
+			}
+		</script>
+	</head>
+	<body>
+		<p id="tmp1">가나다라마바사아자차카타파하</p>
+		<button type="button" onclick="addPic()">click!</button>
+		<ul id="tmp2" onclick="addPic()">
+			<li>아메리카노</li>
+			<li>카페라떼</li>
+			<li>카푸치노</li>
+			<li>카라멜마끼야또</li>
+			<li>프라푸치노</li>
+		</ul>
+		<hr>
+		
+		추가 할 텍스트 > <input id="input_text1" type="text">
+		<button type="button" onclick="addtext()">click!</button>
+		<hr>
+		<div id="target">
+			<p id="p1">첫 번째 단락</p>
+			<p id="p2">두 번째 단락</p>
+		</div>
+		삭제 할 항목의 id > <input id="input_text2" type="text">
+		<button type="button" onclick="removeChild()">삭제</button>
+		<hr>
+		
+		<ul id="tmp3">
+			<li onclick="round_pic(this, 0)">아메리카노</li>
+			<li onclick="round_pic(this, 1)">카페라떼</li>
+			<li onclick="round_pic(this, 2)">카푸치노</li>
+			<li onclick="round_pic(this, 3)">카라멜마끼야또</li>
+			<li onclick="round_pic(this, 4)">프라푸치노</li>
+		</ul>
+		
+	</body>
+</html>

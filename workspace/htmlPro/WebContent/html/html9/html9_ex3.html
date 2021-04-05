@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>객체</title>
+				
+		<script type="text/javascript"> 
+			var myCar = {
+					model : "911 GT3"
+				,	maker : "Porsche"
+				,	year : 2020
+				,	color : "black"
+				,	speed : 50
+				,	brake : function () {
+					//속도 줄이기
+					this.speed -= 10;
+				}
+				,	accel : function () {
+					this.speed += 10;
+				}					
+			};
+			alert(myCar.maker + " " + myCar.model);
+			myCar.model = "Boxter GTS";
+			alert(myCar.maker + " " + myCar.model);
+			alert(myCar.speed);
+			myCar.brake();
+			alert(myCar.speed);
+			
+			function Car(model, maker, year, color, speed){
+					{
+						this.model = model
+					,	this.maker = maker
+					,	this.year = year
+					,	this.color = color
+					,	this.speed = speed
+					,	this.brake = function () {
+						//속도 줄이기
+						this.speed -= 10;
+					}
+					,	this.accel = function () {
+						this.speed += 10;
+					}					
+				};
+			}
+			
+			var AMG_GT = new Car ("AMG GT", "Mercedes Benz", 2021, "Silver", 100);
+			alert(AMG_GT.maker + " " +AMG_GT.model)
+			alert(AMG_GT.speed);
+			AMG_GT.accel();
+			alert(AMG_GT.speed);
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

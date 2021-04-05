@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+    function proc1(){
+    	var arr = []; //객체 초기화
+    	var idx = 0;
+    	while(true){
+    		var name = prompt("이름입력");
+    		
+    		if(name == "" || name == "null"){
+    			break;
+    		}
+    		arr[idx] = name;
+    		idx++;
+    	}
+    	document.getElementById("divResult").innerHTML = arr;
+    }
+    
+    function proc2(){
+    	/*서로 중복되지 않는 정수 5개를 입력받아 출력*/
+    	
+    	//정수 5개 저장할 변수 생성
+    	var arr = [];
+    	//반복
+    	while(arr.length < 5){
+    		//입력 받음
+            var value = prompt("정수를 입력하세요.");
+    		//입력한 값이 배열에 존재하는지 확인 (존재하지 않으면 -1 / 존재하면 0~n)
+    		var idx = arr.indexOf(value);
+    		//존재하지 않으면 arr에 값을 넣는다.
+    		if(idx == -1){
+    			  arr.push(value);
+    			  //- arr의 길이가 5개면 종료한다.
+    			  if(arr.length == 5){
+    				  break;
+    			  }
+    		//존재하면 다시 prompt 한다.
+    		} else {
+    			continue;
+    		}
+    	}
+    	
+    	document.getElementById("divResult").innerHTML = arr;
+    }
+	</script>
+</head>
+<body>
+    <button type="button" onclick="proc1()">문제1</button>
+    <button type="button" onclick="proc2()">문제2</button>
+    <hr>
+    <h3>문제 결과</h3>
+    <div id="divResult"style="border: 1px dotted orange; width: 100%; height: 100px"></div>
+</body>
+</html>

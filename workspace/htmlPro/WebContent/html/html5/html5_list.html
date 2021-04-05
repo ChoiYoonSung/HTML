@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	   ul.sample {
+	       list-style-type: square;
+	       list-style-position: inside;
+	   }
+	   ul {
+	       list-style: none;
+	       border-top: 1px solid red;
+	       border-bottom: 1px solid red;
+	       text-align: center;
+	       padding: 10px 0px;/*Top,Bottom : 10px | left, right : 0px*/
+	   }
+	   ul li {
+	       /*한줄로 먹임*/
+	       display: inline;
+	       padding: 0px 20px;
+	       text-transform: uppercase;
+	   }
+	   
+	   ul li a {
+	       text-decoration: none;
+	       color: black;
+	   }
+	   
+       ul li a:hover {
+            text-decoration: underLine;
+            color: maroon;
+            font-size: 1.5em;
+       }
+	</style>
+</head>
+<body>
+    <p>리스트 스타일 연습</p>
+    <ul>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">BOOTSTRAP</a></li>
+    </ul>             
+</body>
+</html>

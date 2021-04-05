@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function rsp(){
+				var arrRSP = ["가위","바위","보"];
+				var comIndex = Math.floor(Math.random()*3);
+				var comRSP = arrRSP[comIndex];
+				
+				var userRSP = document.getElementById("rsp").value;
+				var userIndex = arrRSP.indexOf(userRSP);
+				
+				if(comIndex == userIndex){
+					alert("Draw\n");
+				} else if(comIndex < userIndex){	//사용자 승
+													//(컴퓨터, 사용자) -> (0,1) / (1,2)/ (2,0)
+					if(comIndex == 0 && userIndex == 2){ //컴퓨터 승
+						alert("졌습니다.");
+					}
+					alert("이겼습니다.");
+				} else{//컴퓨터 승
+					if(comIndex == 2 && userIndex == 0){ //사용자 승 
+						alert("이겼습니다.");
+					}
+					alert("졌습니다.");
+				}
+				alert("Computer : " + comRSP + "\nUser : " + userRSP);
+			}
+		</script>
+	</head>
+	<body>
+		<h1>가위 바위 보</h1>
+		<hr>
+		<input type="text" id="rsp">
+		<button type="button" onclick="rsp()">결과</button>
+	</body>
+</html>

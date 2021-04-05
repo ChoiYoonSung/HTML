@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//input 요소 테두리 lime, 배경색 핑크 (form 선택자)
+				$('form :input')
+				.css("border","2px solid lime")
+				.css("backgroundColor","pink");
+			
+				//input type이 button인 요소 배경색 노란
+				//$('form input[type="button"]').css("backgroundColor","yellow");
+				
+				//Button 요소와 input type이 button 인 요소 배경색 하늘색 (form 선택자)
+				$('form :button').css("backgroundColor","skyblue");
+				
+				// input type이 button인 요소 배경색 검정, 글자색 흰색
+				$('form input[type="button"]').css("backgroundColor","black").css("color","white");
+				
+				//	Type이 submit 요소의 배경색 녹색 (form 선택자)
+				$('form :submit').css("backgroundColor","green");
+				
+				//Type이 reset인 요소의 배경색 노랑 (form 선택자)
+				$('form :reset').css("backgroundColor","yellow");
+				
+				//Type이 text, password 인 요소의 테두리 파랑 (form 선택자)
+				$('form :text, form :password').css("border","2px solid blue");
+				
+				//Type이 file, image인 요소의 테두리 빨강 (form 선택자)
+				$('form :file, form :image').css("border","2px solid red");
+				//$(':image').css("border","2px solid red");
+				//$('img').css("border","2px solid red");
+				//image요소에 적용이 되지 않음
+			});
+		</script>
+	</head>
+	<body>
+		<form>
+			<fieldset>
+				Text : <input type="text"><br>
+				Password : <input type="password"><br><br>
+				Radio : 
+					<input type="radio" name="Radio" id="radioA" value="A">A
+					<input type="radio" name="Radio" id="radioB" value="B">B
+					<br><br>
+				CheckBox : 
+					<input type="checkbox" name="Checkbox" id="checkbox1" value="1">1
+					<input type="checkbox" name="Checkbox" id="checkbox2" value="2">2
+					<br><br>
+				Textarea :<br>
+					<textarea rows="10" cols="30"></textarea><br>
+				Image : 
+					<img alt="image" src="../../images/flowers.jpg"><br><br>
+				File : 
+					<input type="file"><br><br>
+				Buttons : 
+					<button type="button" id="normalBtn">Normal</button>
+					<button type="submit" id="submitBtn">Submit</button>
+					<button type="reset" id="resetBtn">Reset</button><br><br>
+					
+					<input type="button" value="일반버튼"></input>
+					<input type="submit" value="전송버튼"></input>
+					<input type="reset" value="초기화버튼"></input>
+			</fieldset>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('button').css("display","none");
+				
+				var count = 0;
+				var orgSrc = "";
+				$('img').on({
+					mouseover : function(e){	// 마우스 올림
+						orgSrc = e.target.src;
+						switch(e.target.alt){
+						case "img1": 
+							e.target.src = "../../images/sample.jpg";
+							break;
+						case "img2":
+							e.target.src = "../../images/coffee2.jpg";
+							break;
+						case "img3":
+							e.target.src = "../../images/flowers.png";
+							break;
+						}
+					}
+				,	mouseout : function(e){		// 마우스 내림
+						e.target.src = orgSrc;
+					}
+				,	dblclick : function(){		// 더블클릭
+	// 					$(this).hide();
+						$(this).css("display","none");
+	// 					this.style.display = "none";
+	
+	// 					var imgs = $('img');
+	// 					var cnt = 0;
+	// 					for (var i = 0; i < imgs.length; i++) {
+	// 						if(imgs[i].style.display == "none") cnt++;
+	// 					};
+	// 					if(cnt == imgs.length) $('button').css("display","block");
+						//count ++;
+						showBtn(/*count*/);
+					}
+				});
+				
+				$('button').click(function(){
+					$('img').css("display","");
+ 					$(this).css("display","none");
+//					this.style.display = "none";
+				});
+				
+				// a 태그 클릭해도 넘어가지 않음
+				$('a').click(function(e){
+					e.preventDefault();
+				})
+			});
+			
+			function showBtn(/*cnt*/){
+				// count 미사용
+				var tf = false;
+				$('img').each(function(idx, item){
+					if($(item).css("display") != "none") {
+						tf = true
+					}
+				});
+				if(tf) return;
+				$('button').css("display","block");
+				
+				// count 사용
+// 				if(cnt == $('img').length) {
+// 					$('button').css("display","block");
+// 					count = 0;
+// 				};
+
+			};
+			
+		</script>
+		<style type="text/css">
+			img{
+				height: 200px;
+				width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="https://www.google.com" target="_blank" >google</a>
+		<div>
+			<img alt="img1" src="../../images/coffee.jfif">
+			<img alt="img2" src="../../images/lion.jfif">
+			<img alt="img3" src="../../images/spongebob.jpg">
+		</div>
+		<button type="button">보이기</button>
+	</body>
+</html>

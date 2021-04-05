@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('p').click(function(){
+					var parent = $('p').parent;
+					if($('p').is())
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div>
+			<p id="p1">p in div 1</p>
+		</div>
+			<p id="p2">p</p>
+		<div>
+			<p id="p3">p in div 2</p>
+		</div>
+	</body>
+</html>

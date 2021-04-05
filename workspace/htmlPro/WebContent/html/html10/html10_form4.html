@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>form문제 4 - 구구단</title>
+		<script type="text/javascript">
+			function mt_calc(){
+				var num = document.getElementById("ggd").value;
+				var result = "";
+				for (var i = 1; i <= 9; i++) {
+					result += (num + " * " + i + " : " + (num*i) + "<br>");
+				}
+// 				var ele = document.createElement("p");
+// 				ele.innerHTML = result;
+// 				document.getElementById("result_div").appendChild(ele);
+			
+//				createTextNode
+// 				var node = document.createTextNode(result);
+// 				document.getElementById("result_div").appendChild(node);
+
+				//innerHTML
+				var tmpHtml = document.getElementById("result_div").innerHTML;
+				tmpHtml = tmpHtml + result;
+				document.getElementById("result_div").innerHTML = tmpHtml;
+			}
+			
+		</script>
+		<style type="text/css">
+			body {
+				font-size: 20px;
+			}
+			div{
+				text-align: center;
+				margin: 10px;
+			}
+			textarea{
+				font-size: 20px;
+				resize: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<select id="ggd"></select>
+			<button type="button" onclick="mt_calc()">출력</button><br>
+		</div>
+		
+		<div id="result_div">
+		</div>
+		<script type="text/javascript">
+			var parent = document.getElementById("ggd");
+			for (var i = 0; i < 8; i++) {
+				var ele = document.createElement("option");
+				ele.value = (i+2);
+				ele.innerHTML = (i+2) + "단";
+				
+				parent.appendChild(ele);
+			}
+		</script>
+	</body>
+</html>

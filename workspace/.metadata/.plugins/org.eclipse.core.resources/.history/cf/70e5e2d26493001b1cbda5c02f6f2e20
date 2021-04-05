@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#btn").click(function(){
+					var ele = "";
+					var count = 0;
+					$("#div1 :checkbox:checked").each(function(){
+						count++;
+						ele += $(this).attr("value");
+						if($("#div1 :checkbox:checked").length != count)
+							ele += ", ";
+					});
+					alert(ele);
+					$('#result').html("선택결과 : " + ele).css("visibility","visible")
+
+				})
+			})
+		</script>
+	</head>
+	<body>
+	<div id="div1">
+		<form>
+			<input type="checkbox" name="hobby" id="hbTravel" value="여행"> 
+			<label>여행</label>
+			<input type="checkbox" name="hobby" id="hbJanggi" value="장기">
+			<label>장기</label>
+			<input type="checkbox" name="hobby" id="hbBadook" value="바둑">
+			<label>바둑</label>
+			<input type="checkbox" name="hobby" id="hbFishing" value="낚시">
+			<label>낚시</label>
+			<input type="checkbox" name="hobby" id="hbMovie" value="영화">
+			<label>영화</label>
+			<input type="checkbox" name="hobby" id="hbBook" value="독서">
+			<label>독서</label>
+			<br>
+			<button id="btn" type="button">submit</button>
+			<br>
+			<p id="result" style="visibility: hidden;"></p>
+		</form>
+	</div>
+	</body>
+</html>

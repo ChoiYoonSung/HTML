@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			.btnToggleClass{
+				color: red;
+				background-color: #08088A;
+			}
+			#div1{
+				border: 1px solid black;
+				width: 1000px;
+				height: 1000px;
+				padding: 5px;
+				background-color: #FAFAFA;
+			}
+			button {
+				color: #FFFFFF;
+				background-color: #0000FF;
+				border: 1px solid black;
+				border-radius: 2em;
+			}
+		</style>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('button').on("mouseover mouseout", function(){
+					$(this).toggleClass("btnToggleClass");
+				});
+				
+				//show
+				$('#btnShow').click(function(){
+					$('#div2').show(600,"linear",function(){
+						$('#explain').html("Show");
+					});
+				});
+				//hide
+				$('#btnHide').click(function(){
+					$('#div2').hide(600,"linear",function(){
+						$('#explain').html("Hide");
+					});
+				});
+				//slideUp
+				$('#btnSlideUp').click(function(){
+					$('#div2').slideUp(600, "swing", function(){
+						$('#explain').html("Slide Up");
+					});
+				});
+				//slideDown
+				$('#btnSlideDown').click(function(){
+					$('#div2').slideDown(600,"swing",function(){
+						$('#explain').html("Slide Down");
+					});
+				});
+				//slideToggle
+				$('#btnSlideToggle').click(function(){
+					$('#div2').slideToggle(600,"swing",function(){
+						$('#explain').html("Slide Toggle");
+					});
+				});
+				//fadeIn
+				$('#btnFadeIn').click(function(){
+					$('#div2').fadeIn(1000,"swing",function(){
+						$('#explain').html("Fade In");
+					});
+				});
+				//fadeOut
+				$('#btnFadeOut').click(function(){
+					$('#div2').fadeOut(1000,"swing",function(){
+						$('#explain').html("Fade Out");
+					});
+				});
+				//fadeTo
+				$('#btnFadeTo').click(function(){
+					$('img').fadeTo(1000, 0.3, function(){
+						$('#explain').html("Fade To");
+					});
+				});
+				//fadeTo
+				$('#btnFadeToOrg').click(function(){
+					$('img').fadeTo(1000, 1 , function(){
+						$('#explain').html("Fade To Origin");
+					});
+				});
+				//fadeToggle
+				$('#btnFadeToggle').click(function(){
+					$('img').fadeToggle(1000, "swing", function(){
+						$('#explain').html("Fade Toggle");
+					});
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<button type="button" id="btnShow">Show</button>
+			<button type="button" id="btnHide">Hide</button>
+			<button type="button" id="btnSlideUp">SlideUp</button>
+			<button type="button" id="btnSlideDown">SlideDown</button>
+			<button type="button" id="btnSlideToggle">SlideToggle</button>
+			<button type="button" id="btnFadeIn">FadeIn</button>
+			<button type="button" id="btnFadeOut">FadeOut</button>
+			<button type="button" id="btnFadeTo">FadeTo</button>
+			<button type="button" id="btnFadeToOrg">FadeToCallBack</button>
+			<button type="button" id="btnFadeToggle">FadeToggle</button>
+			<br><hr>
+			<p id="explain">explain</p><hr>
+			<div id="div2">
+				<img alt="lion" src="../../images/lion.jfif">
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			img.tmp{
+				width: 200px;
+			}
+			
+		</style>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('p').click(function(){
+					var src = "../../images/" + $(this).attr("title");
+					var strAlt = $(this).text();
+					
+// 					var obj = $("<img>");
+// 					obj.attr("src",src);
+// 					obj.attr("alt",strAlt);
+// 					$(this).append(obj);
+					
+					// case 2
+					var obj = $('<img>',{
+						"src" : src
+						, "alt" : strAlt
+						, "class" : "tmp"
+						});
+					$(this).append(obj);
+				})
+			})
+		</script>
+		
+	</head>
+	<body>
+		<div>
+			<p title="Flowers.jpg">꽃</p>
+			<p title="lion.jfif">사자</p>
+			<p title="spongebob.jpg">스펀지밥</p>
+			
+			<!-- 화면에 나타내지 않으면서 값을 가지고 있음 -->
+			<!-- <p><input type="hidden" value="spongebob.jpg">스펀지밥</p> --> 
+		</div>
+	</body>
+</html>

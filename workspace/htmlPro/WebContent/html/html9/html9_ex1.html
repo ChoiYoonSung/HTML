@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>덧셈 계산기</title>
+	</head>
+	<body>
+		<h1>덧셈 계산기</h1>
+		첫 번째 정수: <input type="text" id="input1"><br> 
+		두 번째 정수: <input type="text" id="input2"><br> 
+		합계:	<input type="text" id="sum"><br>
+		<button type="button" onclick="calc()">계산</button><br>
+		
+		첫 번째 값 : <span id="result1"></span><br>
+		두 번째 값 : <span id="result2"></span><br>
+		합계 : <span id="result3"></span><br>
+		<script type="text/javascript" id="scr1">
+			function calc(){
+				//첫 번째 값, 두 번째 값을 더해서 합계에 표시
+				var input1 = document.getElementById("input1").value;
+				var input2 = document.getElementById("input2").value;
+				var sum = parseInt(input1) + parseInt(input1);
+				document.getElementById("sum").value = sum;
+				//첫 번째 값, 두 번째 값, 결과 텍스트 표시
+				document.getElementById("result1").innerHTML = input1;
+				document.getElementById("result2").innerHTML = input2;
+				document.getElementById("result3").innerHTML = sum;
+				
+				
+			}
+		</script>
+		<br>
+		<hr>
+		<br>
+		<button type="button" onclick="greeting('persie')">Press this button</button>
+		<script type="text/javascript">
+			function greeting(name, position){
+				alert("Welcome, " + name);
+			}
+			//NaN : Not a Number
+			//undefined
+		</script>
+	</body>
+</html>

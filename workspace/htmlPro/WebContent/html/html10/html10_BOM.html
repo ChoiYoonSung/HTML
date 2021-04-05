@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function proc(){
+				var obj = document.getElementById("target");
+				alert(obj.value);
+			}
+			
+			function get(){
+//				document.getElementsByTagName("div");//배열 반환
+				var obj = document.getElementsByTagName("div")[0];//배열 반환
+				alert(obj.innerHTML);
+				
+			}
+			function set(){
+				document.getElementsByTagName("div")[0].innerHTML = "asdf";
+			}
+			
+			function changeImage(){
+				var os = document.getElementById("image_onoff").src;
+				var ns;
+				if(os.indexOf("off") > -1){
+					ns = "../source/sw_on.png"
+				}else{
+					ns = "../source/sw_off.png"
+				}
+				
+				document.getElementById("image_onoff").src = ns;
+				
+			}
+			/* function changeStyle(){
+				document.getElementById("p1").style.color = "green"
+				document.getElementById("p1").style.border = 2px, dotted "blue"
+			}
+ */
+		</script>
+	</head>
+	<body>
+		<form>
+			<input type="text" id="target" name="user_name">
+			<button type="button" onclick="proc()">제출</button>
+			
+			<div>
+				무궁화 꽃이 피었습니다.
+			</div>
+			<button type="button" onclick="get()">내용 가져오기</button>
+			<button type="button" onclick="set()">내용 바꾸기</button>
+			
+			<hr>
+			<img id="image_onoff" alt="onoff" src="../source/sw_off.png" style="width: 200px;" onclick="changeImage()">
+			<button type="button" onclick="changeImage()">이미지 변경</button>
+			<p id="p1" style="border: 1PX, SOLID, RED">ㄱㄴㄷㄻㅄㅇㅈㅋㅌㅍㅎ</p>
+			<button type="button" onclick="changeStyle()">이미지 설정</button>
+			<hr>
+			
+		</form>
+		
+		
+	</body>
+</html>

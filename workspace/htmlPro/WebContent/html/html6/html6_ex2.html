@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			p,div{
+				width: 200px;
+				height: 100px;
+			}
+			#ex1{
+				background-color: skyblue;
+			}
+			#ex2{
+				background-color: yellow;
+				position: relative;
+				z-index: -1;
+				left: 100px;
+				top: 50px;
+			}
+			#ex3{
+				background-color: lime;
+			}
+			#container{
+				background-color: black;
+				position: relative; 
+			}
+			img{
+				width: 300px;
+				position: absolute;
+				top: 500px;
+				z-index: -1; 
+			}
+			img+p{
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>POSITION 연습</h1>
+		<p id="ex1">블럭1</p>
+		<div id="container">
+			<div id="ex2">블럭2(position:static)</div>
+		</div>
+		<p id="ex3">블럭3</p>
+		<hr>
+		<h1>Z-INDEX 연습</h1>
+		<img src="../source/coffee.jfif" alt="">
+		<p><b>카페인이 부족하다</b></p>
+	</body>
+</html>

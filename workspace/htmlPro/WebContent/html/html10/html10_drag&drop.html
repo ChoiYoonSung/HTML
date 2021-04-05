@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Drag & Drop</title>
+		<script type="text/javascript">
+			function allowDrop(ev) {
+				ev.preventDefault();
+			}
+			function drag(ev) {
+				ev.preventDefault();
+				console.log(ev.target());
+				ev.dataTransfer.serData("text");
+				console.log("ev.dataTransfer.getData :::::" + data);
+				
+				ev.target.appendChild(document.getElementById(data));
+			}
+			function drop(ev) {
+				ev.prebentDefault();
+				var data = ev.dataTransfer
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1" style="width: 400px; height: 400px; border: 1px solid red;" ondrop="drop(event)" ondragover="allowdrag(event)">이미지 옮겨올 영역</div>
+		<br>
+		<img id="drag1"src="../source/spongebob.jpg" ondragstart="drag(event)" width="200" draggable="true">
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			img{
+				width: 200px;
+			}
+		</style>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('p').click(function(){
+					var strAlt = $(this).text();
+					var src = "../../images/" + $(this).attr("title");
+					
+					var obj = $("<img alt= "+ strAlt +"'>")
+					obj.attr("src",src);
+					obj.attr("alt",strAlt);
+					$(this).append(obj);
+					
+					// case 2
+					var obj = $('<img>',{
+						"src" : '../../images/' + src
+						, "alt" : strAlt
+						});
+				})
+			})
+		</script>
+		
+	</head>
+	<body>
+		<div>
+			<p title="Flowers.jpg">꽃</p>
+			<p title="lion.jfif">사자</p>
+			<p title="spongebob.jpg">스펀지밥</p>
+		</div>
+	</body>
+</html>

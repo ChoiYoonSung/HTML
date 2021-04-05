@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;T01_EnumTest.java&apos; to &apos;GenericEnumTest/src/kr.or.ddit.basic&apos;&#x0D;&#x0A;- Original project: &apos;GenericEnumTest&apos;&#x0D;&#x0A;- Destination element: &apos;GenericEnumTest/src/kr.or.ddit.basic&apos;&#x0D;&#x0A;- Original element: &apos;T01_EnumTest.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;kr.or.ddit.basic" element1="/src&lt;{T01_EnumTest.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1615179843244" units="1" version="1.0"/>
+</session>

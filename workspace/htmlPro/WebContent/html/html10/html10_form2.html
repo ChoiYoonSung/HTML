@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function result() {
+				var name = document.getElementById("userName").value;
+				var gender = document.getElementsByName("gender");
+				for (var i = 0; i < gender.length; i++) {
+					if(gender[i].checked == true){
+						gender = gender[i].value;
+					}
+				}
+				var hobby = document.getElementsByName("hobby");
+				var h_arr = [];
+				var count = 0;
+				for (var i = 0; i < hobby.length; i++) {
+					if(hobby[i].checked == true){
+						h_arr[count] = hobby[i].value;
+						count+=1;
+					}
+				}
+				var text = "";
+				text = name + "님\n성별 : " + gender + "\n취미 : ";
+				if(count == 0){
+					text += "없음";
+				}else{
+					for (var i = 0; i < h_arr.length; i++) {
+						text += h_arr[i];
+						if(i == h_arr.length-1){
+							break;
+						}
+						text += ", ";
+					}
+				}
+				document.getElementById("output").innerHTML = text 
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			이   름 : <input type="text" id="userName" name="userName" size="10" maxlength="10" required><br><br>
+			성   별 :  
+				<input type="radio" value="남자" name="gender" id="Male">
+                <label for="Male">남자</label>
+                <input type="radio" value="여자" name="gender" id="Female">
+                <label for="Female">여자</label><br><br>
+			취   미 : 
+			<input type="checkbox" name="hobby" id="hobbyTravel" value="여행">
+                <label for="hobbyTravel">여행</label>
+			<input type="checkbox" name="hobby" id="hobbyBook" value="독서">
+                <label for="hobbyBook">독서</label>
+			<input type="checkbox" name="hobby" id="hobbyMovie" value="영화감상">
+                <label for="hobbyMovie">영화감상</label>
+			<input type="checkbox" name="hobby" id="hobbyBaduk" value="바둑">
+                <label for="hobbyBaduk">바둑</label>
+			<input type="checkbox" name="hobby" id="hobbyJanggi" value="장기">
+                <label for="hobbyJanggi">장기</label>
+			<input type="checkbox" name="hobby" id="hobbyHiking" value="등산">
+                <label for="hobbyHiking">등산</label>
+			<input type="checkbox" name="hobby" id="hobbyFishing" value="낚시">
+                <label for="hobbyFishing">낚시</label>
+			<br><br>
+			<button type="button" onclick="result()">결과출력</button><br><br>
+			<textarea rows="10" cols="40" id="output" readonly="readonly" style="resize: none;"></textarea>
+		</form>
+	</body>
+</html>

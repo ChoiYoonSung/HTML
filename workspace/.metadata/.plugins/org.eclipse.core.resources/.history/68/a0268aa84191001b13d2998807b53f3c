@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			body{
+				display: flex;
+			}
+			div{
+				width: 200px;
+				height: 600px;
+				border: 1px solid gray;
+			}
+			img{
+				width: 180px;
+			}
+		</style>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('a').click(function(e){
+					e.preventDefault();
+				});
+				
+				var href;
+				$('a','#div1').click(function(){
+					href = $(this).attr("href");
+					$('#img1').slideUp(1000,"swing",function(){
+						$('#img1').attr("src",href); 
+						console.log($('#img1').attr("src"));
+					});
+				});
+			});	
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<h2>이미지 목록</h2>
+			<ul>
+				<li id="li1"><a href="../../images/coffee.jfif">image1</a></li>
+				<li id="li2"><a href="../../images/coffee2.jpg">image2</a></li>
+				<li id="li3"><a href="../../images/snoopy.gif">image3</a></li>
+			</ul>
+			<img id="img1" alt="image1" src="../../images/spongebob.jpg">
+		</div>
+	</body>
+</html>

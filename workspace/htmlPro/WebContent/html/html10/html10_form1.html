@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>form문제 1 - 구구단</title>
+		<script type="text/javascript">
+			function mt_calc(){
+				var num = document.getElementById("input").value;
+				var result = "";
+				for (var i = 1; i <= 9; i++) {
+					result += (num + " * " + i + " : " + (num*i) + "\n");
+				}
+				document.getElementById("output").innerHTML = result;
+			}
+		</script>
+		<style type="text/css">
+			body {
+				font-size: 20px;
+			}
+			div{
+				text-align: center;
+				margin: 10px;
+			}
+			textarea{
+				font-size: 20px;
+				resize: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="text" size="1" maxlength="1" id="input" required>단
+			<button type="button" onclick="mt_calc()">출력</button><br>
+		</div>
+		<div>
+			<textarea rows="15" cols="20" id="output" readonly></textarea>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>JS HTML</title>
+		<script type="text/javascript">
+			function changeBackgroundColor(c) {
+				document.getElementById("bg").style.backgroundColor=c;
+			}
+			
+			function onMouseIn(elem) {
+				elem.style.border = "2px solid red";
+			}
+			function onMouseOut(elem) {
+				elem.style.border = "";
+			}
+			
+			function changeColor1(e){
+				e.style.color = "#FF0000";
+			}
+			function changeColor2(e){
+				e.style.color = "#FFFF00";
+			}
+		</script>
+	</head>
+	<body id="bg">
+		<!-- onclick(클릭) -->
+		<form>
+			<input type="radio" name="bg" value="c1" onclick="changeBackgroundColor('skyblue')"> sky blue
+			<input type="radio" name="bg" value="c2" onclick="changeBackgroundColor('lightgreen')"> green
+		</form>
+		<br>
+		
+		<!-- onmouseover(커서 위에 올렸을 때) -->
+		<div style="background-color: yellow; width: 200px;" onmouseover="onMouseIn(this)" onmouseout="onMouseOut(this)">
+		마우스 위로 이동</div>
+		<br>
+		
+		<!-- onmousedown/up(클릭/클릭해제) -->
+		<div>
+			<button onmousedown="changeColor1(this)" onmouseup="changeColor2(this)">Click</button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+	</head>
+	<body>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<hr>
+		<button type="button" onclick="getHTML()">getHTML()</button>
+		<button type="button" onclick="getHTML()"></button>
+		<div id="result" onclick="getTEXT()"></div>
+	</body>
+	<script type="text/javascript">
+	function testRepeat(){
+		var objs = $('p');
+		for (var i = 0; i < objs.length; i++) {
+			alert($(objs[i].html()));
+		}
+		
+// 		// case2) jquery each문 사용 - selector 이용
+// 		$("p").each(function(){
+// 			console.log(this); // => objs[i] / <p>
+// 			alert($(obj).html);
+// 		})
+		
+		$('p').each(function(idx, obj){
+			console.log(idx + "/" + obj); // => objs[i] / <p>
+			alert($(obj).html());
+			
+		});
+		
+		// case3) jquery each문 사용 - object 이용
+		var arr = ["현대","기아","쉐보레","르노"];	//<= 서버로 결과를 받은 list인 경우 이렇게 사용할 수 있음
+		$.each(arr,function(idx, obj){
+			//arr[idx] ==> obj
+			console.log(obj)
+		})	
+		
+	}
+	
+	function getHTML(){
+		var result = $('p').html;	// get 메소드
+		$('#result').html(result);	// set 메소드
+	}
+	
+	function getTEXT(){
+		
+	}
+	
+	</script>
+</html>

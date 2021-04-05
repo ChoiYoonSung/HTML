@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>JS 연산자</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//문자 + 문자
+			var str1 = "Welcome to ";
+			var str2 = "Java Script";
+			var str3 = str1 + str2;
+			
+			document.write(str3)
+			
+			//숫자 + 문자
+			var no1 = 10;
+			var no2 = 20;
+			var no3 = no1 + no2;
+			document.write(no3);
+			document.write("<br>");
+			
+			var str4 = no3 + "String";
+			document.write(str4);
+			document.write("<br>");
+			
+			document.write(no1 + str4 + no2); //숫자 + 글자 + 숫자
+			
+			document.write("<hr>");
+			var input, x, y;
+			input = prompt("정수 입력", "정수로"); //입력받을 값을 입력하는 명령어 prompt("메시지", "샘플값")
+			x = parseInt(input);
+			
+			input = prompt("정수 입력", "정수로"); //입력받을 값을 입력하는 명령어 prompt("메시지", "샘플값")
+			y = parseInt(input);
+			
+			document.write(x + y);
+			
+			document.write("<hr>");
+			
+		</script>
+	</body>
+</html>

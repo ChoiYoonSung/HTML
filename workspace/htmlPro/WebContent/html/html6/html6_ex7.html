@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>My Blog Page</title>
+		<style type="text/css">
+			body{
+				min-width: 750px;
+			}
+			div{
+				border-radius: 2em;
+				margin: 3px;
+				box-sizing: border-box;
+			}
+			#Header{
+				height:100px;
+				width:100%;
+				background-color: pink;
+				text-align: center;
+				float: none;
+			}
+			#Container1{
+				height: 500px;
+				width: calc(30% - 6px);
+				float: left;
+				background-color: orange;
+			}
+			#Container2{
+				height: 500px;
+				width: calc(70% - 6px);
+				float: right;
+				background-color: yellow;
+			}
+			#Container2 div{
+				border-radius: 2em;
+				padding:3px;
+				background-color: #FFE150;
+			}
+			#Footer{
+				height:30px;
+				width:100%;
+				background-color: #803232;
+				position:static;
+				float:left;
+				color: white;
+				text-align: center;
+			}
+			h2,h3,p{
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			img{
+				display: block;
+				margin: 0px auto;
+			}
+			#spongebob{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="Header">
+			<h1>My Blog Page</h1>
+			<p>블로그 소개 한 줄</p>
+		</div>
+		
+			<div id="Container1">
+					<h2>Links</h2>
+					<ul>
+						<li><a href="https://www.w3.org/" target="_blank">W3C</a></li>
+						<li><a href="https://www.naver.com/" target="_blank">NAVER</a></li>
+						<li><a href="https://daum.net/" target="_blank">DAUM</a></li>
+					</ul>
+					<img alt="spongebob square pants" src="../source/spongebob.jpg" height="200px">
+					<p id="spongebob">스펀지밥</p>
+			</div>
+			
+			<div id="Container2">
+				<div>
+					<h3>Sementic Tags</h3>
+					<p>시멘틱 요소(Sementic elements)들은 브라우저에게 요소의 의미나 
+						목적을 명확하게 알려주는 요소이다.</p>
+				</div>
+				<div>
+					<h3>div와 span</h3>
+					<p>div은 "divide"의 약자로서 페이지를 논리적인 셋션으로 분리하는데 사용되는 태그이다.
+						span요소는 인라인 요소로서 텍스트를 위한 컨테이너로 사용할 수 있다.</p>
+				</div>
+			</div>
+		<div id="Footer">Copyright(c) 2013 Hong</div>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>4. 다중 for문 활용</title>
+	</head>
+	<body>
+		<h1>4. 다중 for문 활용</h1>
+        <p>다중 for문을 이용해서 1~10까지 중 i와 k의 더한 합이 3의 배수일때만 출력, continue를 이용</p>
+		<script type="text/javascript">
+		var sum = 0;
+		
+		for (var i = 1; i <= 10; i++) {
+            for(var k = 1; k <= 10; k++){
+                sum = parseInt(i) + parseInt(k);
+                if(sum % 3 == 1 || sum % 3 == 2){
+                    continue;
+                }
+				document.write("i (" + i + ") + k (" + k + ") = "+ sum + "<br>");
+            }
+            document.write("<hr>");
+		}
+		
+		
+		</script>
+	</body>
+</html>

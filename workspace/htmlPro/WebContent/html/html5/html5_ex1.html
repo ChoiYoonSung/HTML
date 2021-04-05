@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+	   #target1 {
+ 	       border: 10px solid red; 
+	       background-color: yellow;
+	       width: 100px;/*보더 안쪽의 내용물에 대한 너비임.*/
+	       height: 50px;
+	   }
+	   
+	   #target2 {
+/*            border: 1px solid blue; */
+           background-color: fuchsia;
+           width: 100px;
+           height: 50px;
+           border-color: lime;
+           border-width: 3px;
+           /*속성 중 inherit는 거의 사용하지 않는다.*/
+           border-style: dashed;
+           padding-left: 10px;
+           margin-top: -20px;
+       }
+	   #target3 {
+	       border: 1px solid blue; 
+           background-color: grey;
+           width: 100px;
+           height: 50px;
+           padding: 10px;/*border를 기준으로 안쪽 공간이 생성됨.*/
+           margin: 20px;/*border를 기준으로 바깥쪽 공간이 생성됨.*/
+           border: 1px solid blue;
+       }
+       
+       .dot {
+           border: 1px dotted red;
+       }
+       
+       .dot-left {
+           border-left: 1px dotted red;
+       }
+       .style1 {
+            border-style: double;
+       }
+       .style2 {
+            border-style: double dotted;
+       }
+       .style3 {
+       /*위 오른쪽 아래 왼쪽 순*/
+            border-style: double dotted groove;
+            border-color: red yellow green blue;
+       }
+       .radius {
+            border-radius: 20px;/*늘어날수록 둥근도 심화*/
+            border-bottom-left-radius: 5px;/*왼쪽만  둥근정도를 다르게 설정*/
+       }
+	</style>
+</head>
+<body>
+    <p id="target1">이것은 p 요소입니다.</p>
+    <div id="target2">이것은 div 요소입니다.</div>
+    <div id="target3">이것은 div 요소입니다.</div>
+    
+    <hr>
+    
+    <p>보더 스타일 연습</p>
+    
+    <p class="dot">dotted</p>
+    <p class="dot-left">dotted</p>
+    <p class="style1 radius">dotted</p>
+    <p class="style2">dotted</p>
+    <p class="style3">dotted</p>
+</body>
+</html>

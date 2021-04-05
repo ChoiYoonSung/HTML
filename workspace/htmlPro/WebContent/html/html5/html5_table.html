@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	   table, th, td {
+	       border: 1px dotted black;
+	   }
+	   /*border-collapse는 table에만 적용하는 것이 좋다.*/
+	   table {
+	       border-collapse: collapse;
+	       width: 300px;
+	   }
+	   
+	   caption {
+	       caption-side: bottom;
+	   }
+	   
+	   th {
+	       background-color: black;
+	       color: white;
+	   }
+	   
+	   td  {
+	       text-align: center;
+	       background-color: yellow;
+	   }
+	   tr.green td {
+	       text-align: center;
+	       background-color: green;
+	   }
+	</style>
+</head>
+<body>
+    <h1>테이블 스타일 연습</h1>
+    <table>
+        <caption>VIP고객 리스트</caption>
+        <tr>
+            <th>이름</th>
+            <th>이메일</th>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>hong@gmail.com</td>
+        </tr>
+        <tr class="green">
+            <td>아이유</td>
+            <td>iu@gamil.com</td>
+        </tr>
+        <tr>
+            <td>유은지</td>
+            <td>ejyoo@gamil.com</td>
+        </tr>
+        <tr class="green">
+            <td>박상영</td>
+            <td>sypark@gamil.com</td>
+        </tr>
+        <tr>
+            <td>박예진</td>
+            <td>sypark@gamil.com</td>
+        </tr>
+    </table>
+</body>
+</html>

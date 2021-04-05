@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			img{
+				width: 100px;
+			}
+		</style>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div>
+			<img alt="" src="../../images/sample.jpg">
+			<img alt="" src="../../images/snoopy.gif">
+			<img alt="" src="../../images/spongebob.jpg">
+		</div>
+	</body>
+</html>

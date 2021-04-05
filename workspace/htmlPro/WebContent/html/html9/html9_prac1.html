@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>연습5</title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: yellow;
+				overflow: auto;
+				border: solid;
+				border-color: red; 
+			}
+			#a{
+				padding: 0px;
+				margin: 0px;
+			}
+		</style>
+		<script type="text/javascript">
+			var x = 0;
+			function calc(){
+				for (var i = 0; i < 5; i++) {
+					x = Math.round(Math.random()*9,0);
+					document.getElementById("a").innerHTML += x;
+					if(i == 4){
+						document.getElementById("a").innerHTML += "<br>"; 
+						continue;
+					}
+					document.getElementById("a").innerHTML += " , ";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button type="button" onclick="calc()">시작</button>
+		<hr color="blue">
+		<h1>출력 위치</h1>
+		<div>
+			<p id="a"></p>
+		</div>
+	</body>
+</html>

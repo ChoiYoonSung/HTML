@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var input;
+			var sum = 0;
+			
+			do{
+				input = prompt("값 입력","종료 : 0");
+				sum += parseInt(input);
+			}while(input != 0)
+			document.write("합계 : " + sum);
+			
+			var sum = 0;
+			while(true){
+				input = prompt("입력");
+				if(input == 0){
+					alert("합계 종료");
+					document.write("<hr>합계 : " + sum);
+					break;
+				}
+				sum += parseInt(input);
+			}
+			
+		</script>
+	</body>
+</html>

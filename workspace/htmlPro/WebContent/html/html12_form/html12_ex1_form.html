@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>html form 유효성</title>
+		<script type="text/javascript">
+			function checkEmpty(){
+				var el = document.getElementById("userName");
+				if(el.value.trim().length == 0) {
+					alert("사용자 이름이 입력되지 않았습니다.");
+					el.focus();
+					return;
+				}
+			}
+			
+			function checkLength(){
+				var ele = document.getElementById("userId")
+				if(ele.value.length < 6 || ele.value.length > 8){
+					alert("아이디는 6 ~ 8글자 입니다.");
+					el.focus();
+					return;
+				}
+				
+			}
+			
+			function validate(){
+				//빈값 체크
+				var els = document.getElementsByName("userInfo");
+				var un = document.getElementById("userName");
+				var ub = document.getElementById("userBir");
+				var ui = document.getElementById("userId");
+				var ut = document.getElementById("userTel");
+				var reg_t = /^\d{3}-?\d{4}-?\d{4}$/;
+				if(ut.value.match(reg_t)){
+					alert("정상");
+					return;
+				}else{
+					alert("오류");
+					ut.focus();
+					return;
+				}
+				var reg_e = /^[0-9a-zA-Z][-_.]?[0-9a-zA-Z]?@\W[0-9a-zA-Z]?[-_.]?[0-9a-zA-Z]?/;
+				
+				var usertel = ut.value;
+				usertel = usertel.replaceAll("-","");
+				
+				for (var i = 0; i < els.length; i++) {
+					if(els[i].value.trim().length == 0) {
+						alert("입력정보를 확인하십시오.")
+						els[i].focus();
+						return;
+					}
+					if(i == 0 && (un.value.length < 2 || un.value.length > 5)){
+						alert("이름은 2~5글자 입니다.");
+						un.focus();
+						return;
+					}
+					if(i == 2 && (ub.value.length > 10)){
+						alert("생일은 최대 10글자 입니다.");
+						ub.focus();
+						return;
+					}
+					if(i == 3 && (ui.value.length < 6 || un.value.length > 8)){
+						alert("아이디는 6~8글자 입니다.");
+						ui.focus();
+						return;
+					}
+					if(i == 5 && (ut.value.length > 13)){
+						alert("전화번호는 최대 13글자 입니다.");
+						ut.focus();
+						return;
+					}
+				}
+				
+				/* 
+				var un = document.getElementById("userName");
+				if(un.value.trim().length == 0) {
+					alert("사용자 이름이 입력되지 않았습니다.");
+					un.focus();
+					return;
+				} if(un.value.length < 2 || un.value.length > 5){
+					alert("이름은 2~5글자 입니다.");
+					un.focus();
+					return;
+				}
+				
+				var ua = document.getElementById("userAddr");
+				if(ua.value.trim().length == 0) {
+					alert("사용자 주소가 입력되지 않았습니다.");
+					ua.focus();
+					return;
+				}
+				
+				var ub = document.getElementById("userBir");
+				if(ub.value.trim().length == 0) {
+					alert("사용자 생일이 입력되지 않았습니다.");
+					ub.focus();
+					return;
+				}if(ub.value.length > 10){
+					alert("생일은 최대 10글자 입니다.");
+					ub.focus();
+					return;
+				}
+				
+				var ui = document.getElementById("userId");
+				if(ui.value.trim().length == 0) {
+					alert("사용자 아이디가 입력되지 않았습니다.");
+					ui.focus();
+					return;
+				}if(ui.value.length < 6 || un.value.length > 8){
+					alert("아이디는 6~8글자 입니다.");
+					ui.focus();
+					return;
+				}
+				
+				var ue = document.getElementById("userEmail");
+				if(ue.value.trim().length == 0) {
+					alert("사용자 이메일이 입력되지 않았습니다.");
+					ue.focus();
+					return;
+				}
+				
+				var ut = document.getElementById("userTel");
+				if(ut.value.trim().length == 0) {
+					alert("사용자 전화번호가 입력되지 않았습니다.");
+					ut.focus();
+					return;
+				}if(ut.value.length > 13){
+					alert("전화번호는 최대 13글자 입니다.");
+					ut.focus();
+					return;
+				} */
+				//자리수 체크
+			}
+		</script>
+	</head>
+	<body>
+		<form id="f1">
+		<!-- 전체 빈값x, 이름 : 2-5, 생일 : 0-10, 휴대폰 : 13,  -->
+			이름 : <input type="text" name="userInfo" id="userName"><br>
+			주소 : <input type="text" name="userInfo" id="userAddr"><br>
+			생일 : <input type="date" name="userInfo" id="userBir"><br>
+			아이디(6 ~ 8) : <input type="text" name="userInfo" id="userId"><br>
+			이메일 : <input type="email" name="userInfo" id="userEmail"><br>
+			휴대폰 : <input type="text" name="userInfo" id="userTel"><br>
+			<button type="submit">확인/전송</button>
+			<button type="button" onclick="checkEmpty()">공백 확인1</button>
+			<button type="button" onclick="checkLength()">길이 확인2</button><br>
+			<button type="button" onclick="validate()">양식 확인</button>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>6. 두 수의 합 100이상 출력</title>
+	</head>
+	<body>
+		<h1>6. 두 수의 합 100이상 출력</h1>
+        <p>
+        	두 수를 입력(prompt) 두 수의 합이 100이상일 때만 출력.<br>
+        	continue를 이용, 두 수 모두 0이 입력되면 종료
+        </p>
+		<script type="text/javascript">
+			while(true){
+				var a = prompt("첫 번째 숫자를 입력하십시오.","입력 숫자 2개 모두 0일시 종료.");
+				var b = prompt("두 번째 숫자를 입력하십시오.","입력 숫자 2개 모두 0일시 종료.");
+				
+				a = parseInt(a);
+				b = parseInt(b);
+				
+				if(a + b < 100){
+					if(a == 0 && b == 0){
+						alert("종료합니다.");
+						window.close();
+					}
+					alert("100 이하입니다.")
+					continue
+				}
+				document.write(a + b + "<hr>");
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,5 @@
+INDEX VERSION 1.130+D:\A_TeachingMaterial\5.JQuery\workspace\.metadata\.plugins\org.eclipse.jdt.core
+622841373.index
+4088121087.index
+2647599234.index
+1298530464.index

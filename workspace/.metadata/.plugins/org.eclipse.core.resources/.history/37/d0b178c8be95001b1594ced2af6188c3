@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+	</head>
+	<body>
+		<h3>XMLHttpRequest 사용</h3>
+		<button type="button" id="btnGetA">GET 비동기(async) 호출</button>
+		<button type="button" id="btnGetS">GET 동기(sync) 호출</button>
+		<hr>
+		<button type="button" id="btnJQ">JQ AJAX 호출</button>
+		<hr>
+		<div id="divResult" style="border: 1px solid; height: 300px; overflow: auto;">
+		</div>
+	</body>
+	<script type="text/javascript">
+	$('#btnJQ').click(function(){
+		var obj;
+		$.ajax({
+			url : "jquery_test"	// 호출 할 주소(url)
+			, type : "GET"		// 데이터 전송 방식 - method(get/post)
+			, data : obj		// 전송할 데이터
+			, dayaType : "html"	// 결과로 받은 데이터의 형식
+			
+		})
+	});
+	
+	$('#btnGetA').click(function(){
+		// XMLHttpRequest 객체로 호출
+		// 1) XMLHttpRequest 객체 생성
+		var xhttp = new XMLHttpRequest();
+		// 2) 서버(, 페이지 등) 연결하기 - open(method, url, async)
+		var url = "jquery_test.html"
+		xhttp.open("GET", url, true);
+		// 3) 서버(, 페이지 등) 전송하기 - send();
+		xhttp.send();
+		
+		// 4) 결과처리
+		xhttp.onreadystatechange = function() {
+			// 상태 : 요청이 처리완료됨(데이터 받음), 서버에서 요청이 정상 처리됨.
+			if (this.readyState == 4 && this.status == 200) {
+				// 정상 처리 되었을 때 화면 처리 할 내용
+				$('#divResult').html(this.responseText);
+			};
+		};
+	})
+	
+	$('#btnGetS').click(function(){
+		// XMLHttpRequest 객체로 호출
+		// 1) XMLHttpRequest 객체 생성
+		var xhttp = new XMLHttpRequest();
+		// 2) 서버(, 페이지 등) 연결하기 - open(method, url, async)
+		var url = "jquery_test.html"
+		xhttp.open("GET", url, false);	// 동기식 호출로 변경
+		// 4) 결과처리
+		xhttp.onreadystatechange = function() {
+			// 상태 : 요청이 처리완료됨(데이터 받음), 서버에서 요청이 정상 처리됨.
+			if (this.readyState == 4 && this.status == 200) {
+				// 정상 처리 되었을 때 화면 처리 할 내용
+				$('#divResult').html(this.responseText);
+			};
+		};
+		// 3) 서버(, 페이지 등) 전송하기 - send();
+		xhttp.send();
+	})
+	
+	</script>
+</html>

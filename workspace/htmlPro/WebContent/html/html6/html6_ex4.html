@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			div{
+			width: 100px;
+			height: 50px;
+			}
+			#Header{
+			width:100%;
+			height:50px;
+			float: none;
+			background-color: red;
+			}
+			#B{
+			width:30%;
+			height:500px;
+			float: left;
+			background-color: blue;
+			}
+			#BinB{
+				width: inherit * 0.9;
+				height: inherit;
+				position: absolute;
+			}
+			#C{
+			width:70%;
+			height:500px;
+			float: right;
+			background-color: yellow;
+			}
+			#Footer{
+			width:100%;
+			float: left;
+			background-color: lime;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="Header">A</div>
+		<div id="B">
+			<div id="BinB">
+				B in B
+			</div>
+		</div>
+		<div id="C">C</div>
+		<div id="Footer">D</div>
+	</body>
+</html>

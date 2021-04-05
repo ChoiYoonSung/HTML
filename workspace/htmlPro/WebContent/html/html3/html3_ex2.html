@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <form>
+            
+            <fieldset>
+                <legend>회원 정보 입력</legend>
+                아이디 : <input type="text" name="userId" size="10" maxlength="10" title="사용자아이디" required> <br>
+                비밀번호 : <input type="password" size="10" name="userPassword" title="사용자비밀번호" required> <br>
+                비밀번호 확인 : <input type="password" size="10" name="userPassword" placeholder="비밀번호는 3자리 이상 입니다."> <br>
+                이름 : <input type="text" name="userName" size="5" readonly >  <br>
+                이메일 : <input type="text" name="userEmail" size="15" value="test@google.com" disabled>  <br>
+                성별 : 
+                <input type="radio" value="M" name="gender" id="genderMale" checked>
+                <label for="genderMale">남자</label>
+                <input type="radio" value="F" name="gender" id="genderFemale">
+                <label for="genderFemale">여자</label> 
+                <br>
+                거주지역 : 
+                <input type="radio" value="seoul" name="location" id="locationSeoul"> 
+                <label for="locationSeoul">서울</label>
+                <input type="radio" value="incheon" name="location" id="locationIncheon">
+                <label for="locationIncheon">인천</label>
+                <input type="radio" value="daejeon" name="location" id="locationDaejeon">
+                <label for="locationDaejeon">대전</label>
+                <input type="radio" value="daegu" name="location" id="locationDaegu">
+                <label for="locationDaegu">대구</label>
+                <input type="radio" value="gwangju" name="location" id="locationGwangji">
+                <label for="locationGwangji">광주</label>
+                <input type="radio" value="ulsan" name="location" id="locationUlsan">
+                <label for="locationUlsan">울산</label>
+                <input type="radio" value="busan" name="location" id="locationBusan">
+                <label for="locationBusan">부산</label>
+
+                <br>
+                취미 : 
+                <input type="checkbox" name="hobby" id="hobbyBook">
+                <label for="hobbyBook">독서</label>
+                <input type="checkbox" name="hobby" id="hobbyExcercise">
+                <label for="hobbyExcercise">운동</label>
+                <input type="checkbox" name="hobby" id="hobbyMovie"> 
+                <label for="hobbyMovie">영화감상</label>
+                <input type="checkbox" name="hobby" id="hobbyMusic">
+                <label for="hobbyMovie">음악감상</label>
+                <input type="checkbox" name="hobby" id="hobbyFood">
+                <label for="hobbyFood">맛집탐방</label>
+                <br>
+                자격증 : 
+                <input type="checkbox" name="license"> 교원자격증
+                <input type="checkbox" name="license"> 용접기능사
+                <input type="checkbox" name="license"> 정보처리기사
+                <input type="checkbox" name="license"> 컴퓨터활용능력
+                <input type="checkbox" name="license"> 리눅스마스터
+                <br>
+                프로필 사진 등록 : <input type="file" accept="image/gif,image/jpeg,image/jpg">
+            </fieldset>
+            <br>
+            <input type="button" value="저장"> <br>
+            <input type="submit" value="전송"> <br>
+            <input type="reset" value="초기화"> <br>
+            <input type="hidden" value="">
+            <br>
+
+            날짜 : <input type="date"><br>
+            날짜&시간 : <input type="datetime"><br>
+            월 : <input type="month"><br>
+            시간 : <input type="time"><br>
+            주 : <input type="week"><br>
+            색상 : <input type="color"><br>
+            이메일 : <input type="email"><br>
+            전화번호 : <input type="tel"><br>
+            범위 : <input type="range"><br>
+            [숫자]신발사이즈 : <input type="number" min="220" max="290" step="5"><br>
+            URL : <input type="url"><br>
+
+            <hr>
+            <button type="button" onclick="alert();">저장</button>
+            <button type="submit">전송</button>
+            <button type="reset">초기화</button>
+            <hr>
+            <textarea rows="5" cols="50"></textarea>
+            <br>
+
+            자동차 브랜드 : 
+            <select name="car">
+                <option value="H" selected>Hyundai</option>
+                <option value="K">KIA</option>
+                <option value="C">Chevolette</option>
+                <option value="R">Renault</option>
+                <option value="B">BMW</option>
+                <option value="M">Mercedes Benz</option>
+                <option value="P">Porsche</option>
+            </select>
+        </form>
+    </body>
+</html>

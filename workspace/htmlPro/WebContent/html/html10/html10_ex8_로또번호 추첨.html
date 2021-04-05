@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+		
+			var arr = [];
+			while(arr.length < 6){
+				var no = arr.push(parseInt(Math.random()*45)+1); //1~45
+				if(arr.indexOf(no) == -1)
+					arr.push(no);
+			}
+			
+			arr.sort(function(a,b){
+				console.log(a + " " + b);
+				console.log(a-b);
+				}
+			);
+			
+			document.getElementById("a") == arr;
+			
+			/* function lotto(){
+				for(var i = 0; i < 6; i++){
+					var rnd = Math.floor((Math.random()*45)+1);
+					document.getElementById("a").innerHTML += rnd;
+					if(i == 5){
+						break;
+					}
+					document.getElementById("a").innerHTML += ", ";
+				}				
+					document.getElementById("a").innerHTML += "<br>";
+			} */
+		</script>
+	</head>
+	<body>
+		<h1>Lotto</h1>
+		<button type="button" onclick="lotto()">번호 추첨추첨</button>
+		<p id="a"> </p>
+	</body>
+</html>

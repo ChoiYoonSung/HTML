@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			.btnToggleClass{
+				color: red;
+				background-color: #08088A;
+			}
+			div{
+				border: 1px solid black;
+				width: 1000px;
+				height: 1000px;
+				padding: 5px;
+				background-color: #FAFAFA;
+			}
+			button {
+				color: #FFFFFF;
+				background-color: #0000FF;
+				border: 1px solid black;
+				border-radius: 2em;
+			}
+			#explain{
+				display: none;
+			}
+		</style>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('button').on("mouseover mouseout", function(){
+					$(this).toggleClass("btnToggleClass");
+				});
+				
+				//show
+				$('#btnShow').click(function(){
+					$('img').show(500);
+				});
+				//hide
+				$('#btnHide').click(function(){
+					$('img').hide(500);
+				});
+				//slideUp
+				$('#btnSlideUp').click(function(){
+					$('img').slideUp(600,"swing",function(){
+						
+					});
+				});
+				//slideDown
+				$('#btnSlideDown').click(function(){
+				});
+				//slideToggle
+				$('#btnSlideToggle').click(function(){
+					
+				});
+				//fadeIn
+				$('#btnFadeIn').click(function(){
+					
+				});
+				//fadeOut
+				$('#btnFadeOut').click(function(){
+					
+				});
+				//fadeTo
+				$('#btnFadeTo').click(function(){
+					
+				});
+				//fadeToggle
+				$('#btnFadeToggle').click(function(){
+					
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div>
+			<button type="button" id="btnShow">Show</button>
+			<button type="button" id="btnHide">Hide</button>
+			<button type="button" id="btnSlideUp">SlideUp</button>
+			<button type="button" id="btnSlideDown">SlideDown</button>
+			<button type="button" id="btnSlideToggle">SlideToggle</button>
+			<button type="button" id="btnFadeIn">FadeIn</button>
+			<button type="button" id="btnFadeOut">FadeOut</button>
+			<button type="button" id="btnFadeTo">FadeTo</button>
+			<button type="button" id="btnFadeToggle">FadeToggle</button>
+			<br><br>
+			<img alt="lion" src="../../images/lion.jfif">
+			<p id="explain">explain</p>
+		</div>
+	</body>
+</html>

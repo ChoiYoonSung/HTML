@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript"></script>
+		<style type="text/css">
+			body{
+				font-size: 10px;
+			}
+			#select_box{
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+			}
+			select{
+				width: 300px;
+				height: 500px;	
+			}
+			#btn{
+				width: 100px;
+				height: 500px;
+				display: flex;
+				flex-direction: column;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			button {
+				width: 50px;
+				height: 30px;
+				margin: 10px;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			#insert_box{
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+		
+		
+		
+	</head>
+	<body>
+		<h1 style="text-align: center; font-size:30px;">select객체 예제</h1>
+		<form id="select_box">
+			<select id="select_left" multiple="multiple">
+				<option value="Hyundai" >Hyundai</option>
+                <option value="Kia">KIA</option>
+                 <option value="Chevolette">Chevolette</option>
+                <option value="Renault">Renault</option>
+                <option value="Bmw">BMW</option>
+                <option value="Mercedes_Benz">Mercedes Benz</option>
+                <option value="Porsche">Porsche</option>
+			</select>
+			<div id="btn">
+				<button id="toRightBtn" onclick="toRight()"><p> > </p></button>
+				<button id="toRightAllBtn" onclick="toRightAll()"><p> >> </p></button>
+				<button id="toLeftBtn" onclick="toLeft()"><p> < </p></button>
+				<button id="toLeftAllBtn" onclick="toLeftAll()"><p> << </p></button>
+			</div>
+			<select id="select_right" multiple="multiple">
+			</select>
+		</form>
+		<form id="insert_box">
+			<input type="text" id="insertId" size="10" maxlength="10" style="height: 30px;">
+			<button type="button" onclick="insert()">추가</button>
+		</form>
+		
+		<script type="text/javascript">
+			var left = document.getElementById("select_left")
+			var right = document.getElementById("select_right")
+			
+			function toRight(){
+				var l_arr = left.querySelectorAll("option:checked");
+				document.getElementById
+				for (var i = 0; i < l_arr.length; i++) {
+					right.appendChild(l_arr);
+				}
+			}
+			
+			function toRightAll(){
+				while(document.getElementById("select_left").getElementsByTagName("option").length == 0){
+					toRight();
+				}
+			}
+			
+			function toLeft(){
+				var l_item = document.getElementById("select_left");
+			}
+			function toLeftAll(){
+				while(document.getElementById("select_right").getElementsByTagName("option").length == 0){
+					toLeft();
+				}
+			}
+			
+			function insert(){
+				var add = document.getElementById("insertId").value;
+				alert(add);
+			}
+		</script>
+	</body>
+</html>

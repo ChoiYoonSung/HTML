@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(":enabled").css("border","2px solid blue")
+				$(":disabled").css("border","2px solid red")
+			})
+		</script>
+	</head>
+	<body>
+		<form>
+			<input type="text">
+			<input type="password"><br>
+			<select name="disSelect" disabled>
+				<option>Option1</option>
+				<option>Option2</option>
+			</select>
+			<br>
+			<textarea name="enTextarea" rows="10" cols="20"></textarea>
+			<br>
+			<input type="button" value="확인" disabled>
+			<br>
+		</form>
+	</body>
+</html>

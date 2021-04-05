@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			img{
+				width: 100px;
+			}
+		</style>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var nm = $('#img1').attr('src');
+				var arr = nm.split("/"); // => 배열 형태로 나옴 ["..","..","images","파일명"]
+				var filename = arr[arr.length - 1];
+				alert(filename);
+				
+				// 1. for문
+				// 2. each()
+				
+				$('#btnClick').click(function(){
+					$('img').each(function(){
+						var name = this.attr('src');
+						var arr = name.split("/")''
+						var fileName = arr[arr.length - 1];
+						$(this).attr("title",fileName);
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<img id="img1" src="../../images/sample.jpg">
+			<img src="../../images/snoopy.gif">
+			<img src="../../images/spongebob.jpg">
+			<button id="btnClick" type="button">click</button>
+		</div>
+	</body>
+</html>

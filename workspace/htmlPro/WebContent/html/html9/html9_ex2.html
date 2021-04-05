@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>함수 실행</title>
+		<script type="text/javascript">
+			function sub(a,b){
+				return a+b;
+			}
+			window.onload=function(){ //window.inload : 창 실행시 자동실행
+				document.getElementById("a").innerHTML = sub(4,5);
+			
+				//confirm()
+				var result = confirm("컨펌");
+				document.getElementById("tmp").innerHTML = result;
+			}
+			
+		</script>
+	</head>
+	<body>
+		<p id="a"></p>
+		<p id="tmp"></p>
+	</body>
+</html>

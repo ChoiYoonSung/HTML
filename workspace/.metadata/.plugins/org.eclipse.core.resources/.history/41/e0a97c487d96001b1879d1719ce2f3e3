@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>연습1 이메일 전송화면</legend>
+                이름 &nbsp; &nbsp;<input type="text" id="userName" name="userName" size="15" title="사용자이름" value="" required>  <br>
+                이메일 <input type="text" id="userEmail" name="userEmail" size="15" title="사용자이메일" required> <br>
+                내용
+                <br>
+                <textarea rows="5" cols="50"></textarea>
+                <br>
+                <button type="submit">전송</button>
+                <button type="reset">재설정</button>
+            </fieldset>
+            
+        </form>
+    </body>
+</html>

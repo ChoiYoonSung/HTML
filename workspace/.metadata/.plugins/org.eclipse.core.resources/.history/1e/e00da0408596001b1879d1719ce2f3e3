@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript"></script>
+	</head>
+	<body>
+		<form action="jquery_test.html" method="get" id="fm">
+			이름: <input type="text"><br>
+			나이: <input type="text"><br><br>
+			<button type="button" id="btnPost" onclick="fnPost()">post버튼</button>
+			<button type="button" id="btnGet" onclick="fnGet()">get버튼</button>
+			<button type="submit">submit</button>
+			<br>
+			<hr>
+			<button type="button" id="btnajax" onclick="fnAjax()">Ajax버튼</button>
+			<hr>
+			<button type="button" id="btnajax" onclick="fnText()">텍스트</button>
+			<button type="button" id="btnajax" onclick="fnHTML()">HTML</button>
+			<button type="button" id="btnajax" onclick="fnJsonObj()">JSON obj</button>
+			<button type="button" id="btnajax" onclick="fnJsonArr()">JSON 배열</button>
+			<button type="button" id="btnajax" onclick="fnJsonList()">JSON 목록</button>
+		</form>
+		<div id="result">
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		function fnGet(){
+			// submit 호출
+			var fm = document.getElementById("fm"); // <form>
+			fm.action = "jquery_test.html?userName=test01&userEmail=asdf"; // action 설정 가능
+			fm.method = "post";
+			fm.submit();
+			
+		}
+		
+		function fnAjax(){
+			$.ajax({
+				url : "intro.html"
+				, type : "GET"
+				, success : function(data){
+					$('#result').html(data);
+				}
+				, error : function(){
+					
+				}
+			});
+		}
+		
+		function fnText(){
+			$.ajax({
+				url : "/JQueryPro/html/sample/data_text.txt"	// 절대 경로
+// 				, type : ""
+// 				, data : {}
+				, dataType : "text"
+				, success : function(data){
+// 					$('#result').html(data)
+					$('#result').text(data)
+				}
+				, error : function(){
+					
+				}
+			});
+		}
+
+		function fnJsonObj(){
+			$.ajax({
+				url : "/JQueryPro/html/sample/data_json_obj.txt"
+				, dataType : "json"
+				, success : function(data){
+					console.log(data);
+					console.log(data.name);
+					// div에 이름 나이
+					
+					var str = "";
+					str += "이름 : " + data.name + "<br>"
+						+ "나이 : " + data.age + "<br>"
+						+ "성별 : " + data.age + "<br>"
+						+ "직업 : " + data.age;
+					
+					$('#result').html(str);
+					
+				}
+			});
+		}
+		
+		function fnJsonArr(){
+			$.ajax({
+				url : "/JQueryPro/html/sample/data_json_arr.txt"
+				, dataType : "json"
+				, success : function(data){
+					console.log(data);
+					
+					var str = "<ol>";
+					for(var i = 0; i < data.length; i++){
+						str += "<li>" + data[i] + "</li>";
+					}
+// 					$.each(data,function(idx)){
+// 						str += "<li>" + data[i] + "</li>";
+// 					}
+					str += "</ol>";
+					
+					$('#result').html(str);
+				}
+			});
+		}
+		
+		function fnJsonList(){
+			$.ajax({
+				url : "/JQueryPro/html/sample/data_json_list.txt"
+				, dataType : "json"
+				, success : function(data){
+					console.log(data);
+					
+					var str = "";
+					for(var i = 0; i < data.length; i++){
+						// 1번쨰 회원
+						// 이름 : -
+						// 나이 : -
+						// 성별 : -
+						// 직업 : -
+						var obj = data[i];
+						str += "이름 : " + obj.name + "<br>"
+								+ "나이 : " + obj.age + "<br>"
+								+ "성별 : " + obj.gender + "<br>"
+								+ "직업 : " + obj.job
+								
+					}
+				}
+			});
+		}
+		
+	</script>
+</html>

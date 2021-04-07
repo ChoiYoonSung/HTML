@@ -4,3 +4,6 @@
 1617588795314	Move 'jquery_chp9' to 'html'
 1617589663257	Rename resource 'html_ex_mail.html'
 1617672345553	Rename resource 'jquery_chp9_get,post.html'
+1617755088393	Move 'web.xml' to 'WEB-INF'
+1617758432354	Move 'jquery_chp9_ajax.js' to 'js'
+1617758655882	Move 'jquery_chp9_ajax.js' to 'jquery_chp9'

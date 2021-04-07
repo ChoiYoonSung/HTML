@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript"></script>
+	</head>
+	<body>
+		<p>안녕하세요, <span id="spanUserName">홍길동</span>씨</p>
+		<br>
+		<p>올해로 <span id="spanUserAge">39</span>살 이시군요.</p>
+	</body>
+	<script type="text/javascript">
+		
+		var url = location.href;
+		var params = url.substr(url.indexOf("?")+1);
+		var arr = params.split("&");
+		
+		var userName = arr[0].split("=")[1];
+		var userAge = arr[1].split("=")[1];
+		
+		document.getElementById("spanUserName").innerHTML = userName;
+		document.getElementById("spanUserAge").innerHTML = userAge;
+	</script>
+</html>

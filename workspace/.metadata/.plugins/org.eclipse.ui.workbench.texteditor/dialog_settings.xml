@@ -15,6 +15,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="&lt;button type=&quot;button&quot; id=&quot;btnajax&quot; onclick=&quot;fnAjax()&quot;&gt;Ajax버튼&lt;/button&gt;"/>
 			<item value="h3"/>
 			<item value="hide"/>
 			<item value="hide()"/>
@@ -29,7 +30,6 @@
 			<item value="media"/>
 			<item value="con"/>
 			<item value="source"/>
-			<item value="gray"/>
 		</list>
 		<list key="replacehistory">
 			<item value="h4"/>

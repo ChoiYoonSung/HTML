@@ -11,10 +11,13 @@
 	String str = "";
 	System.out.println("~");
 	
+	// 한글 깨짐 현상 -> request에 characterEncoding을 세팅해준다.
+	request.setCharacterEncoding("UTF-8");
+	
 	String userName = request.getParameter("userName");
 	String userAge = request.getParameter("userAge");
-	
 	%>
+	
 	<p>안녕하세요, <span id="spanUserName"><%=userName %></span>씨</p>
 	<br>
 	<p>올해로 <span id="spanUserAge"><%=userAge %></span>살 이시군요.</p>

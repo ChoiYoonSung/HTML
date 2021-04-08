@@ -9,12 +9,15 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="h4" key="selection"/>
+		<item value="li" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="li"/>
+			<item value="ul"/>
+			<item value="&#x09;&#x09;&lt;script src=&quot;../../js/jquery-3.6.0.js&quot;&gt;&lt;/script&gt;"/>
 			<item value="&lt;button type=&quot;button&quot; id=&quot;btnajax&quot; onclick=&quot;fnAjax()&quot;&gt;Ajax버튼&lt;/button&gt;"/>
 			<item value="h3"/>
 			<item value="hide"/>
@@ -27,9 +30,6 @@
 			<item value="if(comIndex == userIndex){"/>
 			<item value="user"/>
 			<item value="right"/>
-			<item value="media"/>
-			<item value="con"/>
-			<item value="source"/>
 		</list>
 		<list key="replacehistory">
 			<item value="h4"/>

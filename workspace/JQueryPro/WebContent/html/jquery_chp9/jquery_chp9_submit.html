@@ -8,8 +8,12 @@
 	</head>
 	<body>
 		<form action="" method="" id="fm">
+			아이디: <input type="text" name="userId"><br>
+			비밀번호: <input type="text" name="userPasswod"><br>
 			이름: <input type="text" name="userName"><br>
-			나이: <input type="text" name="userAge"><br><br>
+			나이: <input type="text" name="userAge"><br>
+			휴대폰 번호: <input type="text" name="userPhNum"><br>
+			<br>
 			<button type="button" id="btnGet" onclick="fnGet()">get버튼</button>
 			<button type="button" id="btnPost" onclick="fnPost()">post버튼</button>
 			<br>
@@ -32,5 +36,8 @@
 			fm.method = "post";
 			fm.submit();
 		}
+		
+		// practice : 전송할 파라미터가 늘어나고 순서가 바뀌었을 때 정확히 전달할 수 있도록
+		
 	</script>
 </html>

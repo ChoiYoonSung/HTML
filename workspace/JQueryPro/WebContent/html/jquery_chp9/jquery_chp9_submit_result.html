@@ -13,14 +13,15 @@
 	</body>
 	<script type="text/javascript">
 		
-		var url = location.href;
-		var params = url.substr(url.indexOf("?")+1);
-		var arr = params.split("&");
+		var url = window.location.href;	// url 받음
+		var params = url.substr(url.indexOf("?")+1); // url에서 ?로 받는 파라미터값
+		var arr = params.split("&");	// 각각의 파라미터값 배열로 할당
 		
-		var userName = arr[0].split("=")[1];
+		var userName = decodeURI(arr[0].split("=")[1]);	// decodeURI 이유?
 		var userAge = arr[1].split("=")[1];
+		// var userPassword = getValue(url, "userPassword");
 		
-		document.getElementById("spanUserName").innerHTML = userName;
+		document.getElementById("spanUserName").innerHTML =  userName;
 		document.getElementById("spanUserAge").innerHTML = userAge;
 	</script>
 </html>

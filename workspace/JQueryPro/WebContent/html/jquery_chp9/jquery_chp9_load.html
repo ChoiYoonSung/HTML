@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="../../js/jquery-3.6.0.js"></script>
+		<script type="text/javascript"></script>
+		<style type="text/css">
+			table{
+				border-collapse: collapse;
+				width: 100%; 
+			}
+			
+			table, td{
+				border: 1px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 목록화면 영역 -->
+		<div>
+			<table>
+				<tr id="tr1">
+					<td>홍길동</td>
+					<td>남자</td>
+				</tr>
+				<tr id="tr2">
+					<td>아이유</td>
+					<td>여자</td>
+				</tr>
+			</table>
+		</div>
+		<!-- 상세화면 영역 -->
+		<div id="detail"></div>
+	</body>
+	<script type="text/javascript">
+		// 테이블의 행을 클릭했을때 상세정보영역에 상세화면이 나오도록
+		$('#tr1').click(function(){
+			$('#detail').load("jquery_chp9_load_data.html")
+		})
+	</script>
+</html>

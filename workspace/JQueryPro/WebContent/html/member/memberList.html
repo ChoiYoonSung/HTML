@@ -4,52 +4,68 @@
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 		<script src="../../js/jquery-3.6.0.js"></script>
-		<script type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#btnSearch').click(function(){
+					$.ajax({
+						url : "/JQueryPro/MemberServlet"
+						, type : "post"
+						, data : ""
+						, dataType : "json"
+						, success : function(data){
+							console.log(data);
+							alert("성공");
+						}
+						, error : function(xhr){
+							console.log(xhr);
+							alert("오류발생");
+						} 
+					})
+				})
+			})
+		</script>
 		<style type="text/css">
-			table tr th,td{
+			table{
 				border: 1px solid black;
-			}
-			div{
-				min-width: 500px;
+				width: 500px;
 			}
 		</style>
 	</head>
 	<body>
-		<h3>회원목록</h3>
-		<!-- 검색조건 -->
-		<div id="divSearch">
-			ID : <input type="text" name="searchId">
-			이름 : <input type="text" name="searchName">
-			<button type="button" onclick="search()">조회</button>
-		</div>
-		<!-- 검색결과 -->
-		<div id="divResult">
-			<table>
-				<tr>
-					<th>번호</th>
-					<th>ID</th>
-					<th>이름</th>
-					<th>전화번호</th>
-					<th>생년월일</th>
-				</tr>					
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>					
-			</table>
-		</div>
-		<!-- 신규등록 -->
-		<div id="divRegi">
-			<button type="button">신규 등록</button>
+	
+		<div>
+			<h3>회원목록</h3>
+			<!-- 검색조건 -->
+			<div id="divSearch">
+				ID : <input type="text" name="searchId">
+				이름 : <input type="text" name="searchName">
+				<button id="btnSearch" type="button">조회</button>
+			</div>
+			<!-- 검색결과 -->
+			<div id="divResult">
+				<table>
+					<tr>
+						<th>번호</th>
+						<th>ID</th>
+						<th>이름</th>
+						<th>전화번호</th>
+						<th>생년월일</th>
+					</tr>					
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>					
+				</table>
+			</div>
+			<!-- 신규등록 -->
+			<div id="divRegi">
+				<button type="button">신규 등록</button>
+			</div>
 		</div>
 	</body>
 	<script type="text/javascript">
-		function search(){
-			var searchId = $('#searchId').value()
-		}
-		
 	</script>
 </html>

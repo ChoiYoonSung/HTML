@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="member">
+
+	<select id="retrieveMemberList" parameterClass="kr.or.ddit.member.vo.MemberVO" resultClass="kr.or.ddit.member.vo.MemberVO">
+		SELECT MEM_ID                memId             
+             , MEM_PASS              memPass           
+             , MEM_NAME              memName           
+             , MEM_BIR               memBir            
+             , MEM_ZIP               memZip            
+             , MEM_ADD1              memAdd1           
+             , MEM_ADD2              memAdd2           
+             , MEM_HP                memHp             
+             , MEM_MAIL              memMail           
+             , RECV_EMAIL_YN         recvEmailYn      
+             , MEM_JOB               memJob            
+             , MEM_LIKE              memLike           
+             , MEM_MEMORIAL_TYPE     memMemorialType  
+             , MEM_MEMORIAL_DATE     memMemorialDate  
+             , NVL(MEM_MILEAGE, 0)   memMileage        
+             , MEM_COMMENT           memComment        
+             , MEM_DELETE            memDelete         
+          FROM TB_MEMBER
+         WHERE 1=1
+         <isNotEmpty property="memId">
+         AND MEM_ID = #memId#
+         </isNotEmpty>
+         <isNotEmpty property="memName" prepend="AND">
+         MEM_NAME = #memName#
+         </isNotEmpty>
+	</select>
+	
+</sqlMap>

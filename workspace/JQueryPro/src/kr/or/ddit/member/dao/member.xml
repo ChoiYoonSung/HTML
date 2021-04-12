@@ -5,6 +5,82 @@
 
 <sqlMap namespace="member">
 
+	<insert id="insertMember" parameterClass="kr.or.ddit.member.vo.MemberVO">
+		Insert into TB_MEMBER(
+			MEM_ID
+			, MEM_PASS
+			, MEM_NAME
+			, MEM_BIR
+			, MEM_ZIP
+			, MEM_ADD1
+			, MEM_ADD2
+			, MEM_HP
+			, MEM_MAIL
+			, RECV_EMAIL_YN
+			, MEM_JOB
+			, MEM_LIKE
+			, MEM_MEMORIAL_TYPE
+			, MEM_MEMORIAL_DATE
+			, MEM_MILEAGE
+			, MEM_COMMENT
+			, MEM_DELETE
+		)
+		Values (
+			#memId#
+			, #memPass#
+			, #memName#
+			, #memBir#
+			, #memZip#
+			, #memAdd1#
+			, #memAdd2#
+			, #memHp#
+			, #memMail#
+			, #recvEmailYn#
+			, #memJob#
+			, #memLike#
+			, #memMemorialType#
+			, #memMemorialDate#
+			, #memMileage#
+			, #memComment#
+			, #memDelete#			
+		)
+	</insert>
+	
+	<update id="updateMember">
+	
+	</update>
+	
+	<delete id="deleteMember">
+	
+	</delete>
+
+	<select id="retrieveMember" parameterClass="kr.or.ddit.member.vo.MemberVO">
+		Select ( MEM_ID                memId             
+             , MEM_PASS              memPass           
+             , MEM_NAME              memName           
+             , MEM_BIR               memBir            
+             , MEM_ZIP               memZip            
+             , MEM_ADD1              memAdd1           
+             , MEM_ADD2              memAdd2           
+             , MEM_HP                memHp             
+             , MEM_MAIL              memMail           
+             , RECV_EMAIL_YN         recvEmailYn      
+             , MEM_JOB               memJob            
+             , MEM_LIKE              memLike           
+             , MEM_MEMORIAL_TYPE     memMemorialType  
+             , MEM_MEMORIAL_DATE     memMemorialDate  
+             , NVL(MEM_MILEAGE, 0)   memMileage        
+             , MEM_COMMENT           memComment        
+             , MEM_DELETE            memDelete
+             )  
+		From TB_MEMBER
+		WHERE MEM_ID like '%' || #memId# || '%'  
+		<isNotEmpty property="memName" prepend="AND">
+		MEM_NAME like '%' || #memName# || '%'
+		</isNotEmpty>
+		
+	</select>
+
 	<select id="retrieveMemberList" parameterClass="kr.or.ddit.member.vo.MemberVO" resultClass="kr.or.ddit.member.vo.MemberVO">
 		SELECT MEM_ID                memId             
              , MEM_PASS              memPass           
@@ -25,11 +101,11 @@
              , MEM_DELETE            memDelete         
           FROM TB_MEMBER
          WHERE 1=1
-         <isNotEmpty property="memId">
-         AND MEM_ID = #memId#
+         <isNotEmpty property="memId" prepend="AND">
+         MEM_ID like '%' || #memId# || '%'
          </isNotEmpty>
          <isNotEmpty property="memName" prepend="AND">
-         MEM_NAME = #memName#
+         MEM_NAME like '%' || #memName# || '%'
          </isNotEmpty>
 	</select>
 	

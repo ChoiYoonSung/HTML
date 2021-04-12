@@ -2,9 +2,9 @@
 <%@page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+[
 <%
-	// 서블릿에서 조회결과를 "list"라는 key로 request에 담아줬음
+	// 서블릿에서 조회결과를 "list"라는 key로 request에 담아줌
 	List<MemberVO> list = (List<MemberVO>)request.getAttribute("list");	// 조회 결과를 "list"로 담아줬음
 	
 	for(int i = 0; i < list.size(); i++){
@@ -16,7 +16,7 @@
 		if(i>0){
 			%>,<%
 		}
-		%>{name : "<%=memName %>", id : "<%=memId %>"}<%
+		%>{"name" : "<%=memName %>", "id" : "<%=memId %>"}<%
 	}
 %>
-
+]

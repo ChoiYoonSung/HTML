@@ -9,12 +9,15 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="li" key="selection"/>
+		<item value="2" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="1"/>
+			<item value=" insertMember"/>
+			<item value="_"/>
 			<item value="li"/>
 			<item value="ul"/>
 			<item value="&#x09;&#x09;&lt;script src=&quot;../../js/jquery-3.6.0.js&quot;&gt;&lt;/script&gt;"/>
@@ -27,11 +30,11 @@
 			<item value="sha"/>
 			<item value="sele"/>
 			<item value="flex"/>
-			<item value="if(comIndex == userIndex){"/>
-			<item value="user"/>
-			<item value="right"/>
 		</list>
 		<list key="replacehistory">
+			<item value="2"/>
+			<item value="#"/>
+			<item value=""/>
 			<item value="h4"/>
 			<item value="com"/>
 			<item value="left"/>
@@ -45,7 +48,7 @@
 		<item value="288" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="679" key="DIALOG_X_ORIGIN"/>
-		<item value="268" key="DIALOG_Y_ORIGIN"/>
+		<item value="674" key="DIALOG_X_ORIGIN"/>
+		<item value="263" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

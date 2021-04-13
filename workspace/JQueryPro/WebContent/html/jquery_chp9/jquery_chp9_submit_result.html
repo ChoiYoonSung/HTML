@@ -13,6 +13,26 @@
 	</body>
 	<script type="text/javascript">
 		
+		function getValue(url, key){
+			var idx = url.indexOf("?");
+			if(idx > -1){
+				url = url.substr(idx+1);
+				var arr = url.split("&");
+				
+				for(var i = 0; i < arr.length; i ++){
+					var tmp = arr[i].split("=");
+					
+					if(tmp[0] == key){
+						if(tmp[1].length){
+							return tmp[1];
+						}else{
+							return "";
+						}
+					}
+				}
+			}
+		}
+	
 		var url = window.location.href;	// url 받음
 		var params = url.substr(url.indexOf("?")+1); // url에서 ?로 받는 파라미터값
 		var arr = params.split("&");	// 각각의 파라미터값 배열로 할당

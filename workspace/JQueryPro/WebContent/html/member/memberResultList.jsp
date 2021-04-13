@@ -13,10 +13,19 @@
 		String memName = vo.getMemName();
 		
 		// json 타입으로 만들어야하는 부분 ==> {name : "", id : ""}
+		
+		// 번호, 아이디, 이름, 생년월일, 전화번호, 직업
 		if(i>0){
 			%>,<%
 		}
-		%>{"name" : "<%=memName %>", "id" : "<%=memId %>"}<%
+		%>{
+			"memId" : "<%=memId %>"
+			, "memName" : "<%=memName %>"
+			, "memBir" : "<%=vo.getMemBir() %>"
+			, "memPass" : "<%=vo.getMemPass() %>"
+			, "memHp" : "<%=vo.getMemHp() %>"
+			, "memMail" : "<%=vo.getMemMail()%>"
+			}<%
 	}
 %>
 ]

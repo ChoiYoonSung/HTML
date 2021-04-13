@@ -15,6 +15,11 @@ public class MemberService {
 			dao = new MemberDao();
 	}
 	
+	public MemberVO retrieveMember(String memId) throws SQLException {
+		MemberVO memberVo = dao.retrieveMember(memId);
+		return memberVo;
+	}
+	
 	public List<MemberVO> retrieveMemberList(MemberVO memberVo) throws SQLException {
 		List<MemberVO> list = dao.retrieveMemberList(memberVo);
 		return list;

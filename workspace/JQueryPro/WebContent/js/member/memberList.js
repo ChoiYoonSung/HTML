@@ -28,6 +28,10 @@ $(document).ready(function() {
 			}
 		})
 	})
+	
+	$('#btnRegi').click(function(){
+		
+	})
 })
 
 function makeTable(data) {
@@ -35,13 +39,15 @@ function makeTable(data) {
 
 	for (var i = 0; i < data.length; i++) {
 		str += "<tr>" 
-			+ "<td>" + data[i].id + "</td>";
-			+ "<td>" + data[i].name + "</td>" 
-			+ "<td>" + data[i].gender + "</td>"
-			+ "<td>" + data[i].birth + "</td>" 
-			+ "<td>" + data[i].tel+ "</td>" 
+			+ "<td>" + (i+1) + "</td>"
+			+ "<td>" + data[i].memId + "</td>"
+			+ "<td>" + data[i].memName + "</td>" 
+			+ "<td>" + data[i].memPass + "</td>" 
+			+ "<td>" + data[i].memBir + "</td>"
+			+ "<td>" + formatHp(data[i].memHp) + "</td>" 
+			+ "<td>" + data[i].memMail + "</td>" 
 			+ "</tr>";
 	}
-
 	$("#tbResult tbody").html(str);
 }
+

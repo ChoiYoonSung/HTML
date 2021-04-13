@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="kr">
+	<head>
+		<title>Insert title here</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="/JQueryPro/css/listcss.css">
+		<script src="/JQueryPro/js/jquery-3.6.0.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/JQueryPro/js/common/myutils.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				
+				// 중복검사 버튼 클릭 이벤트
+				function chkId(){
+					var id = $('#memid').val();
+					
+					if(isEmpty(id)){
+						alert("ID 값이 입력되지 않았습니다.");
+						$("#memid").focus();
+							$('#spanMemId').show();
+						return;
+					}
+					
+					var regExp = /^[0-9a-z]{3,10}$/;
+					if(!regExp.test(id)){
+						alert("ID값이 유효하지 않습니다.");
+						$('#memid').focus();
+							$('#spanMemId').show();
+						return;
+					}
+					
+					$.ajax({
+						url : "",
+						type : "post",
+						data : {"memId" : memId, "flag" : "CHKID"},
+						dataType : "json",
+						success : function(data){
+							cnosole.log(data);
+							$('#memid').focus();
+							$('#spanMemId').hide();
+							
+						},
+						error : function(xhr){
+							console.log(xhr);
+							alert("ID 중복 검사 중 오류가 발생했습니다.")
+							$('#memid').focus();
+							$('#spanMemId').show();
+						}
+					})
+				}
+				// 
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<h2>회원가입</h2>
+			<form class="form-horizontal" action="/action_page.php">
+				<div class="form-group form-inline">
+					<label class="control-label col-sm-2" for="memid">ID:</label>
+					<div class="col-sm-5">
+						<input type="text" class="form-control" id="memid"
+							placeholder="아이디" name="id">
+						<button type="button" class="btn btn-default btn-sm" id="btnMemId" onclick="chkId()">중복검사</button>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="pwd">Password:</label>
+					<div class="col-sm-5">
+						<input type="password" class="form-control" id="pwd"
+							placeholder="비밀번호" name="pwd">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="name">이름:</label>
+					<div class="col-sm-5">
+						<input type="text" class="form-control" id="name"
+							placeholder="이름" name="name">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="birth">생년월일:</label>
+					<div class="col-sm-5">
+						<input type="date" class="form-control" id="birth"
+							placeholder="Email" name="birth">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="email">Email:</label>
+					<div class="col-sm-5">
+						<input type="email" class="form-control" id="email"
+							placeholder="Email" name="email">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="address">주소:</label>
+					<div class="col-xs-3">
+						<input type="text" class="form-control" id="address"
+							name="address" disabled="disabled">
+						 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addressModal">주소찾기</button>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="job">직업:</label>
+					<div>
+						<select>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="like">취미:</label>
+					<div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="comment">비고:</label>
+					<div class="col-sm-5">
+						<textarea rows="" cols=""></textarea>
+					</div>
+				</div>
+				
+				
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<div class="checkbox">
+							<label><input type="checkbox" name="remember">
+								Remember me</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-default">Submit</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="addressModal" role="dialog">
+			<div class="modal-dialog">
+	
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">주소 검색</h4>
+					</div>
+					<div class="modal-body">
+					시 : <select>
+						</select>
+					구 : <select>
+						</select>
+					동 : <select>
+						</select>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+					</div>
+				</div>
+	
+			</div>
+		</div>
+</body>
+</html>

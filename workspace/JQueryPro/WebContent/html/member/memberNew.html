@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="kr">
 	<head>
-		<title>Insert title here</title>
+		<title>회원 가입</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -9,51 +9,7 @@
 		<script src="/JQueryPro/js/jquery-3.6.0.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="/JQueryPro/js/common/myutils.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				
-				// 중복검사 버튼 클릭 이벤트
-				function chkId(){
-					var id = $('#memid').val();
-					
-					if(isEmpty(id)){
-						alert("ID 값이 입력되지 않았습니다.");
-						$("#memid").focus();
-							$('#spanMemId').show();
-						return;
-					}
-					
-					var regExp = /^[0-9a-z]{3,10}$/;
-					if(!regExp.test(id)){
-						alert("ID값이 유효하지 않습니다.");
-						$('#memid').focus();
-							$('#spanMemId').show();
-						return;
-					}
-					
-					$.ajax({
-						url : "",
-						type : "post",
-						data : {"memId" : memId, "flag" : "CHKID"},
-						dataType : "json",
-						success : function(data){
-							cnosole.log(data);
-							$('#memid').focus();
-							$('#spanMemId').hide();
-							
-						},
-						error : function(xhr){
-							console.log(xhr);
-							alert("ID 중복 검사 중 오류가 발생했습니다.")
-							$('#memid').focus();
-							$('#spanMemId').show();
-						}
-					})
-				}
-				// 
-				
-			})
-		</script>
+		<script type="text/javascript" src="/JQueryPro/js/member/memberNew.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -63,8 +19,9 @@
 					<label class="control-label col-sm-2" for="memid">ID:</label>
 					<div class="col-sm-5">
 						<input type="text" class="form-control" id="memid"
-							placeholder="아이디" name="id">
+							placeholder="아이디" name="memid">
 						<button type="button" class="btn btn-default btn-sm" id="btnMemId" onclick="chkId()">중복검사</button>
+						<span id="spanMemId" style="display: none">아이디를 다시 입력해 주십시오.</span>
 					</div>
 				</div>
 				<div class="form-group">
@@ -108,7 +65,7 @@
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="job">직업:</label>
 					<div>
-						<select>
+						<select id="memJob">
 						</select>
 					</div>
 				</div>

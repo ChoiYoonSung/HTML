@@ -1,6 +1,3 @@
-/**
- * 
- */
 $(document).ready(function() {
 	$('#btnSearch').click(function() {
 
@@ -29,9 +26,6 @@ $(document).ready(function() {
 		})
 	})
 	
-	$('#btnRegi').click(function(){
-		
-	})
 })
 
 function makeTable(data) {
@@ -51,3 +45,10 @@ function makeTable(data) {
 	$("#tbResult tbody").html(str);
 }
 
+function memberRegi() {
+	$("#targetUrl").val("/html/member/memberNew.jsp");
+	var fm = document.getElementById("tmpFm");
+	fm.method = "post";
+	fm.action = "/JQueryPro/MemberServlet";
+	fm.submit();
+}

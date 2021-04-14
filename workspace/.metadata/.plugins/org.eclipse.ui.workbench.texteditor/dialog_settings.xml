@@ -15,6 +15,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="ta"/>
 			<item value="1"/>
 			<item value=" insertMember"/>
 			<item value="_"/>
@@ -29,7 +30,6 @@
 			<item value="Hide"/>
 			<item value="sha"/>
 			<item value="sele"/>
-			<item value="flex"/>
 		</list>
 		<list key="replacehistory">
 			<item value="2"/>

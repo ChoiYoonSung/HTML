@@ -5,5 +5,9 @@
 <fullyQualifiedTypeName name="org.eclipse.jdt.internal.compiler.lookup.ReductionResult"/>
 <fullyQualifiedTypeName name="kr.or.ddit.member.vo.MemberVO"/>
 <fullyQualifiedTypeName name="kr.or.ddit.member.service.MemberService"/>
+<fullyQualifiedTypeName name="kr.or.ddit.common.service.CodeService"/>
+<fullyQualifiedTypeName name="kr.or.ddit.common.vo.CodeVO"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="kr.or.ddit.common.dao.CodeDao"/>
 </qualifiedTypeNameHistroy>

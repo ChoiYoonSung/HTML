@@ -9,12 +9,17 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="2" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item value="zip" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="code"/>
+			<item value="zip"/>
+			<item value="그룹코드로 코드테이블 조회"/>
+			<item value="회"/>
+			<item value="Code"/>
 			<item value="ta"/>
 			<item value="1"/>
 			<item value=" insertMember"/>
@@ -25,13 +30,11 @@
 			<item value="&lt;button type=&quot;button&quot; id=&quot;btnajax&quot; onclick=&quot;fnAjax()&quot;&gt;Ajax버튼&lt;/button&gt;"/>
 			<item value="h3"/>
 			<item value="hide"/>
-			<item value="hide()"/>
-			<item value="Hide()"/>
-			<item value="Hide"/>
-			<item value="sha"/>
-			<item value="sele"/>
 		</list>
 		<list key="replacehistory">
+			<item value="zip"/>
+			<item value="code"/>
+			<item value="Zip"/>
 			<item value="2"/>
 			<item value="#"/>
 			<item value=""/>
@@ -48,7 +51,7 @@
 		<item value="288" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="674" key="DIALOG_X_ORIGIN"/>
-		<item value="263" key="DIALOG_Y_ORIGIN"/>
+		<item value="-78" key="DIALOG_X_ORIGIN"/>
+		<item value="407" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

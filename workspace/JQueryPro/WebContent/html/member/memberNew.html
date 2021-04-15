@@ -71,7 +71,21 @@
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="like">취미:</label>
-					<div>
+					<div class="form-group" id="divMemHobby">
+						<label class="checkbox-inline">
+					      <input type="checkbox" value="aaa">
+					    </label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="recvEmail">광고수신:</label>
+					<div class="form-group">
+						<label class="radio-inline">
+							<input type="radio" name="recvEmailYnN" id="" value="Y" >수신
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="recvEmailYnN" id="recvEmailN" value="N" >미수신
+						</label>
 					</div>
 				</div>
 				<div class="form-group">
@@ -98,7 +112,7 @@
 			</form>
 		</div>
 
-		<!-- Modal -->
+		<!-- 우편번호 Modal -->
 		<div class="modal fade" id="addressModal" role="dialog">
 			<div class="modal-dialog">
 	
@@ -108,14 +122,17 @@
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 						<h4 class="modal-title">주소 검색</h4>
 					</div>
-					<div class="modal-body">
-					시 : <select>
-						</select>
-					구 : <select>
-						</select>
-					동 : <select>
-						</select>
-					</div>
+						<div class="modal-body">
+						시 : <select id="city" onchange="setGu()">
+								<option>선택하세요</option>
+							</select>
+						구 : <select id="gugun" onchange="setDong()" disabled="disabled">
+								<option>선택하세요</option>
+							</select>
+						동 : <select id="dong" disabled="disabled">
+								<option>선택하세요</option>
+							</select>
+						</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 					</div>

@@ -10,4 +10,6 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="kr.or.ddit.common.dao.CodeDao"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="kr.or.ddit.common.vo.ZipVO"/>
 </qualifiedTypeNameHistroy>

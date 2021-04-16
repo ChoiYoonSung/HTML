@@ -6,71 +6,90 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<link type="text/css" rel="stylesheet" href="/JQueryPro/css/listcss.css">
-		<script src="/JQueryPro/js/jquery-3.6.0.js"></script>
+		<script src="/JQueryPro/js/jquery-3.6.0.js?v=1"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="/JQueryPro/js/common/myutils.js"></script>
-		<script type="text/javascript" src="/JQueryPro/js/member/memberNew.js"></script>
+		<script type="text/javascript" src="/JQueryPro/js/common/myutils.js?v=1"></script>
+		<script type="text/javascript" src="/JQueryPro/js/member/memberNew.js?v=1"></script>
 	</head>
 	<body>
 		<div class="container">
 			<h2>회원가입</h2>
-			<form class="form-horizontal" action="/action_page.php">
+			<form class="form-horizontal" action="/action_page.php" id="fm">
 				<div class="form-group form-inline">
-					<label class="control-label col-sm-2" for="memid">ID:</label>
+					<label class="control-label col-sm-2" for="memId">ID:</label>
 					<div class="col-sm-5">
-						<input type="text" class="form-control" id="memid"
-							placeholder="아이디" name="memid">
+						<input type="text" class="form-control" id="memId"
+							placeholder="아이디" name="memId">
 						<button type="button" class="btn btn-default btn-sm" id="btnMemId" onclick="chkId()">중복검사</button>
 						<span id="spanMemId" style="display: none">아이디를 다시 입력해 주십시오.</span>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="pwd">Password:</label>
+					<label class="control-label col-sm-2" for="memName">이름:</label>
 					<div class="col-sm-5">
-						<input type="password" class="form-control" id="pwd"
-							placeholder="비밀번호" name="pwd">
+						<input type="text" class="form-control" id="memName"
+							placeholder="이름" name="Name">
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="name">이름:</label>
+					<label class="control-label col-sm-2" for="memPwd">비밀번호:</label>
 					<div class="col-sm-5">
-						<input type="text" class="form-control" id="name"
-							placeholder="이름" name="name">
+						<input type="password" class="form-control" id="memPwd"
+							placeholder="비밀번호" name="Pwd">
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="birth">생년월일:</label>
+					<label class="control-label col-sm-2" for="memPwdChk">비밀번호 확인:</label>
 					<div class="col-sm-5">
-						<input type="date" class="form-control" id="birth"
-							placeholder="Email" name="birth">
+						<input type="password" class="form-control" id="memPwdChk"
+							placeholder="비밀번호" name="memPwd">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="memBirth">생년월일:</label>
+					<div class="col-sm-5">
+						<input type="date" class="form-control" id="memBirth"
+							placeholder="Email" name="memBirth">
 					</div>
 				</div>
 				
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="email">Email:</label>
+					<label class="control-label col-sm-2" for="memEmail">Email:</label>
 					<div class="col-sm-5">
-						<input type="email" class="form-control" id="email"
-							placeholder="Email" name="email">
+						<input type="email" class="form-control" id="memEmail"
+							placeholder="Email" name="memEmail">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="memHp">전화번호:</label>
+					<div class="col-sm-5">
+						<input type="text" class="form-control" id="memHp"
+							placeholder="Phone Number" name="memHp">
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="address">주소:</label>
-					<div class="col-xs-3">
-						<input type="text" class="form-control" id="address"
-							name="address" disabled="disabled">
-						 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addressModal">주소찾기</button>
+						<div class="col-sm-10 form-inline">
+							<input type="text" class="form-control form-inline-zip1" id="memZip" name="memZip" readonly="readonly" required>
+							<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#zipModal">검색</button>
+		<!-- 					<button type="button" class="btn btn-info btn-sm" id="btnAddr" onclick="openZip()">검색</button> -->
+							<input type="text" class="form-control form-inline-zip2" id="memAdd1" name="memAdd1" readonly="readonly" required>
+							<br>
+							<div class="form-group-inner-down">
+							<input type="text" class="form-control" id="memAdd2" name="memAdd2" placeholder="상세주소를 입력하세요" required>
+						</div>
 					</div>
 				</div>
 				
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="job">직업:</label>
+					<label class="control-label col-sm-2" for="memjob">직업:</label>
 					<div>
 						<select id="memJob">
 						</select>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="like">취미:</label>
+					<label class="control-label col-sm-2" for="memlike">취미:</label>
 					<div class="form-group" id="divMemHobby">
 						<label class="checkbox-inline">
 					      <input type="checkbox" value="aaa">
@@ -104,16 +123,17 @@
 						</div>
 					</div>
 				</div>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-default">Submit</button>
-					</div>
-				</div>
+				<input type="hidden" name="flag" id="formFlag">
 			</form>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="button" class="btn btn-default" onclick="save()">Submit</button>
+				</div>
+			</div>
 		</div>
 
 		<!-- 우편번호 Modal -->
-		<div class="modal fade" id="addressModal" role="dialog">
+		<div class="modal fade" id="zipModal" role="dialog">
 			<div class="modal-dialog">
 	
 				<!-- Modal content-->
@@ -122,17 +142,29 @@
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 						<h4 class="modal-title">주소 검색</h4>
 					</div>
-						<div class="modal-body">
-						시 : <select id="city" onchange="setGu()">
-								<option>선택하세요</option>
-							</select>
-						구 : <select id="gugun" onchange="setDong()" disabled="disabled">
-								<option>선택하세요</option>
-							</select>
-						동 : <select id="dong" disabled="disabled">
-								<option>선택하세요</option>
-							</select>
-						</div>
+					<div class="modal-body">
+					시 : <select id="city" onchange="setGu()">
+							<option>선택하세요</option>
+						</select>
+					구 : <select id="gugun" onchange="setDong()" disabled="disabled">
+							<option>선택하세요</option>
+						</select>
+					동 : <select id="dong" onchange="setBunji()" disabled="disabled">
+							<option>선택하세요</option>
+						</select>
+					</div>
+					<div id="divBunjiResult" style="display: none">
+						<table id="tbBunjiResult" class="table table-striped">
+							<thead>
+								<tr onclick="">
+									<th>우편번호</th>
+									<th>주소</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 					</div>

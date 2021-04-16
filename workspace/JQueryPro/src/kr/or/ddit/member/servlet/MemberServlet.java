@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.beanutils.BeanUtils;
+
 import kr.or.ddit.member.service.MemberService;
 import kr.or.ddit.member.vo.MemberVO;
 
@@ -49,17 +51,18 @@ public class MemberServlet extends HttpServlet {
 	
 			} else if ("CHKID".equals(flag)){
 				MemberVO memberVo = checkMemberId(req);
+
 				int resultCnt = 0;
 				if(memberVo != null) {
 					resultCnt = 1;
 				}
 				
-				req.setAttribute("memberVo", memberVo);
+				req.setAttribute("resultCnt", resultCnt);
 				RequestDispatcher disp = req.getRequestDispatcher("/html/common/checkResult.jsp");
 				
 				disp.forward(req, resp);
 			}
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -73,13 +76,19 @@ public class MemberServlet extends HttpServlet {
 		return memberVo;
 	}
 
-	private void createMember(HttpServletRequest req) throws SQLException {
-		String memId = req.getParameter("memId");
-		String memName = req.getParameter("memName");
+	private void createMember(HttpServletRequest req) throws Exception {
+		// 기존 방법
+//		String memId = req.getParameter("memId");
+//		String memName = req.getParameter("memName");
 		
+//		MemberVO memberVo = new MemberVO();
+//		memberVo.setMemId(memId);
+//		memberVo.setMemName(memName);
+		
+		// bean utils
+//		파라미터를 쉽게 VO로 받아옴
 		MemberVO memberVo = new MemberVO();
-		memberVo.setMemId(memId);
-		memberVo.setMemName(memName);
+		BeanUtils.populate(memberVo, req.getParameterMap());
 		
 		MemberService service = new MemberService();
 		service.createMember(memberVo);

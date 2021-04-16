@@ -1,25 +1,46 @@
 /**
  * 
  */
-// strUrl = "";
-// strKey = "";
 
 function getValue(strUrl, strKey){
-	var val = "";
-	//strUrl 에서 strKey에 해당하는 
-	val =  "~";
-	return val
+	var idx = url.indexOf("?");
+	if(idx > -1) {
+		url = url.substr(idx + 1);
+		
+		var arr = url.split("&");
+		
+		for(var i = 0 ; i<arr.length ; i++) {
+			var tmp = arr[i].split("=");
+			if(tmp[0] == key) {
+				if(tmp.length > 1) {
+					return tmp[1];
+				} else {
+					return "";
+				}
+			}
+		}
+	}
 }
 
 function isEmpty(val){
-	// 빈 값 체크
-	// val이 빈값 혹은 null 혹은 undefined
-	return true;
+	if(val == undefined) return true;
+	if(val == null) return true;
+	if(val == "null") return true;
+	
+	val = jQuery.trim(val);
+	if(val.length == 0) return true;
+	
+	return false;
 }
 
 function chkRegExp(val, type){
 	// 정규식 검사
 	if(isEmpty())return false;
+}
+
+function changeEmptyVal(val) {
+	if(isEmpty(val)) return "";
+	else return val;
 }
 
 function format(val, type){

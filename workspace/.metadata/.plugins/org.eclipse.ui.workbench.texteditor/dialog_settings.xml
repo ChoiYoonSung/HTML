@@ -9,12 +9,19 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="zip" key="selection"/>
+		<item value="tbody" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="tbody"/>
+			<item value="Modal"/>
+			<item value="zipmodal"/>
+			<item value="fm"/>
+			<item value="display"/>
+			<item value="displ"/>
+			<item value="dis"/>
 			<item value="code"/>
 			<item value="zip"/>
 			<item value="그룹코드로 코드테이블 조회"/>
@@ -23,13 +30,6 @@
 			<item value="ta"/>
 			<item value="1"/>
 			<item value=" insertMember"/>
-			<item value="_"/>
-			<item value="li"/>
-			<item value="ul"/>
-			<item value="&#x09;&#x09;&lt;script src=&quot;../../js/jquery-3.6.0.js&quot;&gt;&lt;/script&gt;"/>
-			<item value="&lt;button type=&quot;button&quot; id=&quot;btnajax&quot; onclick=&quot;fnAjax()&quot;&gt;Ajax버튼&lt;/button&gt;"/>
-			<item value="h3"/>
-			<item value="hide"/>
 		</list>
 		<list key="replacehistory">
 			<item value="zip"/>

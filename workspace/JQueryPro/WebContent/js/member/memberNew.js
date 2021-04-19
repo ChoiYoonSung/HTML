@@ -8,8 +8,6 @@ $(document).ready(function() {
 	// 화면 초기화작업 진행
 	// 직업코드
 	initJobSelect();
-	// 기념일
-	initMemorialSelect();
 	// 광고메일 (default 미수신)
 	$('#recvEmailN').prop("checked",true);
 	// 취미코드
@@ -70,10 +68,6 @@ function makeJobSelect(data){
 //	$('#memJob').append(ele);
 	
 };
-
-function initMemorialSelect(){
-	
-}
 
 // 취미
 function initHobbySelect(){
@@ -280,7 +274,6 @@ function chkId() {
 
 function openZip(){
 //	주소창(모달창) 닫기
-//	$('#zipModal').modal();
 	$('#zipModal').modal();
 }
 
@@ -311,11 +304,20 @@ function save(){
 			console.log(xhr);
 			alert("저장 중 문제가 생겼습니다.\n관리자에게 문의하세요.")
 		}
-		})
+	})
 	
 }
 
 function validate(){
+	var url = $("#fm").serialize();
+	
+	
+//	var reg_name = /^[a-z가-힣]{2,10}$/;
+//	if(!reg_name.test($('#memName').val())){
+//		alert("이름을 한글 2~10글자 이내로 작성하십시오.");
+//		$('#memName').focus();
+//		return false;
+//	}
 	
 	// 걸리면
 //	return false;

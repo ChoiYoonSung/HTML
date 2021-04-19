@@ -9,27 +9,27 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="tbody" key="selection"/>
+		<item value="Result" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="tbody"/>
-			<item value="Modal"/>
-			<item value="zipmodal"/>
-			<item value="fm"/>
-			<item value="display"/>
-			<item value="displ"/>
-			<item value="dis"/>
-			<item value="code"/>
-			<item value="zip"/>
-			<item value="그룹코드로 코드테이블 조회"/>
-			<item value="회"/>
-			<item value="Code"/>
-			<item value="ta"/>
-			<item value="1"/>
-			<item value=" insertMember"/>
+			<item value="Result"/>
+			<item value="JQuery"/>
+			<item value="chkId"/>
+			<item value="memName"/>
+			<item value="hidden"/>
+			<item value="subs"/>
+			<item value="seri"/>
+			<item value="vali"/>
+			<item value="val"/>
+			<item value="test"/>
+			<item value="Flag"/>
+			<item value="formflag"/>
+			<item value="상세주소"/>
+			<item value="target"/>
+			<item value="Regi"/>
 		</list>
 		<list key="replacehistory">
 			<item value="zip"/>
@@ -51,7 +51,7 @@
 		<item value="288" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="-78" key="DIALOG_X_ORIGIN"/>
+		<item value="8" key="DIALOG_X_ORIGIN"/>
 		<item value="407" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

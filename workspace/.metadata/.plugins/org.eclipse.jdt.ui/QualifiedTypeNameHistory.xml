@@ -13,4 +13,5 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="kr.or.ddit.common.vo.ZipVO"/>
 <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>

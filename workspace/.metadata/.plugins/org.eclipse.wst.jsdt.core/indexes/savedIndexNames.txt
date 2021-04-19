@@ -1,9 +1,5 @@
 INDEX VERSION 1.4+D:\A_TeachingMaterial\5.JQuery\workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1646326046.index
-3991140168.index
 4088121087.index
-622841373.index
-1583454551.index
-2957858639.index
 1298530464.index
-3575859282.index
+45106182.index
+622841373.index

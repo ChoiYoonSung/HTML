@@ -46,9 +46,10 @@ function makeTable(data) {
 }
 
 function memberRegi() {
-	$("#targetUrl").val("/html/member/memberNew.jsp");
-	var fm = document.getElementById("tmpFm");
-	fm.method = "post";
-	fm.action = "/JQueryPro/MemberServlet";
-	fm.submit();
+//	$("#targetUrl").val("/JQueryPro/html/member/memberNew.html");
+//	var fm = document.getElementById("tmpFm");
+//	fm.method = "post";
+//	fm.action = "/JQueryPro/html/member/memberNew.html";
+//	fm.submit();
+	window.open("/JQueryPro/html/member/memberNew.html");
 }

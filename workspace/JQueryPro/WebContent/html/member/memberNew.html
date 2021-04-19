@@ -19,7 +19,7 @@
 					<label class="control-label col-sm-2" for="memId">ID:</label>
 					<div class="col-sm-5">
 						<input type="text" class="form-control" id="memId"
-							placeholder="아이디" name="memId">
+							placeholder="아이디(영문 소문자, 숫자 3~10자)" name="memId">
 						<button type="button" class="btn btn-default btn-sm" id="btnMemId" onclick="chkId()">중복검사</button>
 						<span id="spanMemId" style="display: none">아이디를 다시 입력해 주십시오.</span>
 					</div>
@@ -28,36 +28,36 @@
 					<label class="control-label col-sm-2" for="memName">이름:</label>
 					<div class="col-sm-5">
 						<input type="text" class="form-control" id="memName"
-							placeholder="이름" name="Name">
+							placeholder="이름" name="memName" onchange="">
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="memPwd">비밀번호:</label>
+					<label class="control-label col-sm-2" for="memPass">비밀번호:</label>
 					<div class="col-sm-5">
-						<input type="password" class="form-control" id="memPwd"
-							placeholder="비밀번호" name="Pwd">
+						<input type="password" class="form-control" id="memPass"
+							placeholder="비밀번호" name="memPass">
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="memPwdChk">비밀번호 확인:</label>
 					<div class="col-sm-5">
 						<input type="password" class="form-control" id="memPwdChk"
-							placeholder="비밀번호" name="memPwd">
+							placeholder="비밀번호 확인" name="memPwdChk">
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="memBirth">생년월일:</label>
+					<label class="control-label col-sm-2" for="memBir">생년월일:</label>
 					<div class="col-sm-5">
-						<input type="date" class="form-control" id="memBirth"
-							placeholder="Email" name="memBirth">
+						<input type="date" class="form-control" id="memBir"
+							placeholder="Email" name="memBir">
 					</div>
 				</div>
 				
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="memEmail">Email:</label>
+					<label class="control-label col-sm-2" for="memMail">Email:</label>
 					<div class="col-sm-5">
-						<input type="email" class="form-control" id="memEmail"
-							placeholder="Email" name="memEmail">
+						<input type="email" class="form-control" id="memMail"
+							placeholder="Email" name="memMail">
 					</div>
 				</div>
 				<div class="form-group">
@@ -72,7 +72,6 @@
 						<div class="col-sm-10 form-inline">
 							<input type="text" class="form-control form-inline-zip1" id="memZip" name="memZip" readonly="readonly" required>
 							<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#zipModal">검색</button>
-		<!-- 					<button type="button" class="btn btn-info btn-sm" id="btnAddr" onclick="openZip()">검색</button> -->
 							<input type="text" class="form-control form-inline-zip2" id="memAdd1" name="memAdd1" readonly="readonly" required>
 							<br>
 							<div class="form-group-inner-down">
@@ -84,13 +83,13 @@
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="memjob">직업:</label>
 					<div>
-						<select id="memJob">
+						<select id="memJob" name="memJob">
 						</select>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="memlike">취미:</label>
-					<div class="form-group" id="divMemHobby">
+					<div class="form-group" id="divMemHobby" name="memLike">
 						<label class="checkbox-inline">
 					      <input type="checkbox" value="aaa">
 					    </label>
@@ -108,12 +107,11 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="comment">비고:</label>
+					<label class="control-label col-sm-2" for="memComment">비고:</label>
 					<div class="col-sm-5">
-						<textarea rows="" cols=""></textarea>
+						<textarea rows="" cols="" id="memComment" name="memComment"></textarea>
 					</div>
 				</div>
-				
 				
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">

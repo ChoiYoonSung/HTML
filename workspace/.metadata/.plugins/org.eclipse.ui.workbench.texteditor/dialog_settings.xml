@@ -9,12 +9,16 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Result" key="selection"/>
+		<item value="tb" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="tb"/>
+			<item value="equals"/>
+			<item value="eq"/>
+			<item value="chk"/>
 			<item value="Result"/>
 			<item value="JQuery"/>
 			<item value="chkId"/>
@@ -26,10 +30,6 @@
 			<item value="val"/>
 			<item value="test"/>
 			<item value="Flag"/>
-			<item value="formflag"/>
-			<item value="상세주소"/>
-			<item value="target"/>
-			<item value="Regi"/>
 		</list>
 		<list key="replacehistory">
 			<item value="zip"/>

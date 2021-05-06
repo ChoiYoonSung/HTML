@@ -16,18 +16,6 @@ public class ZipService {
 		}
 	}
 	
-	public List<ZipVO> retrieveSidoList() throws SQLException {
-		return dao.retrieveSidoList();
-	}
-	
-	public List<ZipVO> retrieveGugunList(ZipVO zipVO) throws SQLException {
-		return dao.retrieveGugunList(zipVO);
-	}
-	
-	public List<ZipVO> retrieveDongList(ZipVO zipVO) throws SQLException {
-		return dao.retrieveDongList(zipVO);
-	}
-	
 	public List<ZipVO> retrieveZipList(ZipVO zipVO) throws SQLException {
 		return dao.retrieveZipList(zipVO);
 	}

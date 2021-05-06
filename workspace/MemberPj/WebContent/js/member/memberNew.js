@@ -1,10 +1,10 @@
 /**
  * 
  */
+
+var chkResult = false;
+var reg = "";
 $(document).ready(function() {
-	var chkResult = false;
-	// 우편번호 -시
-	initCitySelect();
 	
 	$("#tbBunjiResult").on("dblclick","tbody tr", function(){
 		var zipcode = $(this).children("td:eq(0)").text();
@@ -18,38 +18,12 @@ $(document).ready(function() {
 	
 });
 
-// 주소
-function initCitySelect(){
-	$.ajax({
-		url : "/MemberPj/ZipServlet"
-		, type : "post"
-//		, data : {"groupCode" : "A01"}	
-		, dataType : "json"
-		, success : function(data){
-			console.log(data)
-			makeCitySelect(data);
-		}
-		, error : function(xhr){
-			console.log(xhr);
-			alert("우편번호 코드(시) 불러오는 중 오류");
-		}
-	})
-}
-
-function makeCitySelect(data){
-	var strHtml = '<option value="">선택하세요</option>';
-//	<option value=""></option>
-	for(var i = 0; i < data.length; i ++){
-		strHtml += '<option value="' + data[i].sido+ '">' + data[i].sido+'</option>';
+function zipResearch(){
+	if($('#zipResearch').val() == ""){
+		alert('동을 입력하세요');
+		return;
 	}
-	
-	$('#city').html(strHtml);
-}
-
-function setGu(){
-	var param = { 'sido' : $('#city').val()
-				, 'flag' : 'GU'
-				};
+	var param = {'dong' : $('#zipResearch').val()};
 	
 	$.ajax({
 		url : "/MemberPj/ZipServlet"
@@ -58,79 +32,12 @@ function setGu(){
 		, dataType : "json"
 		, success : function(data){
 			console.log(data)
-			makeGuSelect(data);
+			makeBunjiSelect(data);
 		}
 		, error : function(xhr){
 			console.log(xhr);
-			alert("우편번호 코드(구/군) 불러오는 중 오류");
+			alert("우편번호 코드 불러오는 중 오류");
 		}
-	})
-}
-
-function makeGuSelect(data){
-	var strHtml = '<option value="">선택하세요</option>';
-	for(var i = 0; i < data.length; i ++){
-		strHtml += '<option value="' + data[i].gugun+ '">' + data[i].gugun+'</option>';
-	}
-	
-	$('#gugun').html(strHtml);
-	$('#gugun').prop("disabled", false);
-}
-
-// 동
-function setDong(){
-	var param = { 'sido' : $('#city').val()
-			, 'gugun' : $('#gugun').val()
-			, 'flag' : 'DONG'
-	};
-	
-	$.ajax({
-		url : "/MemberPj/ZipServlet",
-		type : "post",
-		data : param,
-		dataType : "json",
-		success : function(data) {
-			console.log(data)
-			makeDongSelect(data);
-					}
-	, error : function(xhr){
-		console.log(xhr);
-		alert("우편번호 코드(동) 불러오는 중 오류");
-	}
-	})
-}
-
-function makeDongSelect(data){
-	var strHtml = '<option">선택하세요</option>';
-	for(var i = 0; i < data.length; i ++){
-		strHtml += '<option value="' + data[i].dong+ '">' + data[i].dong+'</option>';
-	}
-	
-	$('#dong').html(strHtml);
-	$('#dong').prop("disabled", false);
-}
-
-// 번지
-function setBunji(){
-	var param = { 'sido' : $('#city').val()
-			, 'gugun' : $('#gugun').val()
-			, 'dong' : $('#dong').val()
-			, 'flag' : 'BUNJI'
-	};
-	
-	$.ajax({
-		url : "/MemberPj/ZipServlet"
-			, type : "post"
-			, data : param	
-			, dataType : "json"
-			, success : function(data){
-				console.log(data)
-				makeBunjiSelect(data);
-			}
-			, error : function(xhr){
-				console.log(xhr);
-				alert("우편번호 코드(번지) 불러오는 중 오류");
-			}
 	})
 }
 
@@ -147,11 +54,10 @@ function makeBunjiSelect(data){
 			+ changeEmptyVal(data[i].bunji) + "</td>"
 			+ "</tr>";
 	}
-	
 	$('#tbBunjiResult tbody').html(strHtml);
 }
 
-// 중복검사 버튼 클릭 이벤트
+// 아이디 검사
 function chkId() {
 	var memId = $('#memId').val();
 	
@@ -162,8 +68,8 @@ function chkId() {
 		return;
 	};
 	
-	var regExp = /^[a-z]{1}[0-9a-z]{2,9}$/;
-	if (!regExp.test(memId)) {
+	var reg = /^[a-z]{1}[0-9a-z]{2,9}$/;
+	if (!reg.test(memId)) {
 		alert("ID값이 유효하지 않습니다.");
 		$('#memId').focus();
 		$('#spanMemId').html("ID는 영문 소문자와 숫자 3~10자 입니다.");
@@ -195,17 +101,134 @@ function chkId() {
 	});
 };
 
-function openZip(){
-//	주소창(모달창) 닫기
-	$('#zipModal').modal();
+function validate() {
+	   var val = ['아이디', '이름', '생년월일', '비밀번호', '휴대폰 번호', '이메일', '우편번호', '주소','상세주소']
+	   var arr = [
+		    $('#memId')
+	      , $('#memName')
+	      , $('#memBir')
+	      , $('#memPass')
+	      , $('memHp')
+	      , $('memMail')
+	      , $('memZip')
+	      , $('memAdd1')
+	      , $('memAdd2')
+	      ];
+	   if(chkResult == false){
+	      alert("아이디 중복검사를 하지 않으셨습니다.");
+	      $("#memId").focus();
+	      return false;
+	   }else{
+	      for(var i=0; i<val.length; i++){
+	         if(isEmpty(arr[i].val())){
+	            alert(val[i] + "값이 입력되지 않았습니다.");
+	            $(arr[i]).focus();
+	         }
+	      }
+	   }
+	   chkName();
+	   chkPass();
+	   chkBir();
+	   chkMail();
+	   chkHp();
+	   
+	   return true;
 }
+
+function chkName(){
+   var memName = $('#memName').val();
+   var reg = /^[가-힣]{2,5}$/;
+   if(!reg.test(memName)){
+	   alert("이름이 유효하지 않습니다.")
+	   $('#memName').focus();
+	   $('#spanMemName').show();
+	   return false;
+   }else{
+	   $('#spanMemName').hide();
+   }
+}
+
+function chkPass(){
+	var memPass = $('#memPass').val();
+	var reg = /(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[$`~!@#$%^&-_/=+]).{8,12}$/;
+	if(isEmpty(memPass)){
+		$('#memPass').focus();
+		return false;
+	}else if(!reg.test(memPass)){
+		alert("비밀번호가 유효하지 않습니다.");
+		$('#memPass').focus();
+		$('#spanMemPass').show();
+		return false;
+	}else if(!memPass.equals($("#memPwdChk").val())){
+		alert("비밀번호가 일치하지 않습니다.");
+		$('#memPass').focus();
+		$('#spanMemPass').show();
+		return false;
+	}else{
+		$('#spanMemPass').hide();
+	}
+}
+
+function chkBir(){
+	var memBir = $('#memBir').val();
+	var age = memBir.substr(0,4);
+	var regAge = 10;
+	var today = new Date().getFullYear();
+	var res = today - Number(age);
+	if(isEmpty(memBir)){
+		alert("생일이 입력되지 않았습니다.");
+		$('#memBir').focus();
+		$('#spanMemBir').show();
+		return false;
+	}else if(res < resAge){
+		alert("10세 이상부터 회원가입이 가능합니다.");
+		$('#memBir').focus();
+		$('#spanMemBir').show();
+		return false;
+	}else{
+		$('#spanMemBir').hide();
+	}
+}
+
+function chkMail(){
+	var memMail = $('#memMail').val();
+	var reg = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@\w([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
+	if(isEmpty(memMail)){
+		$('#memMail').focus();
+		return false;
+	}else if(!reg.test(memMail)){
+		alert("이메일이 유효하지 않습니다.");
+		$('#memMail').focus();
+		$('#spanMemMail').show();
+		return false;
+	}else{
+		$('#spanMemMail').hide();
+	}
+}
+
+function chkHp(){
+	var memHp = $('#memHp').val();
+	var reg = /(\d{3})-(\d{3,4})-(\d{4})/;
+	if(isEmpty(memHp)){
+		$('#memHp').focus();
+		return false;
+	}else if(!reg.test(memHp)){
+		alert("전화번호가 유효하지 않습니다.");
+		$('#memHp').focus();
+		$('#spanMemHp').show();
+		return false;
+	}else{
+		$('#spanMemHp').hide();
+	}
+}
+
 
 // 회원정보 저장
 function save(){
 	// 회원정보 유효성 검사
 	var result = validate();
 	if(!result){
-		return;
+		return false;
 	}
 	// 저장 전 사용자에게 확인
 	if(!confirm("저장하시겠습니까?"))return;
@@ -231,49 +254,9 @@ function save(){
 	
 }
 
-function validate(){
-	
-	
-	return true;
-}
-
-function chkEmpty() {
-	   var val = ['아이디', '이름', '생년월일', '비밀번호', '휴대폰 번호', '이메일', '우편번호', '주소','상세주소']
-	   var arr = [$('#memId')
-	      , $('#memName')
-	      , $('#memBir')
-	      , $('#memPass')
-	      , $('memHp')
-	      , $('memMail')
-	      , $('memZip')
-	      , $('memAdd1')
-	      , $('memAdd2')];
-	   if(chkResult == false){
-	      alert("아이디 중복검사를 하지 않으셨습니다.");
-	      $("#memId").focus();
-	      return;
-	   }else{
-	      for(var i=0; i<val.length; i++){
-	         if(isEmpty(arr[i].val())){
-	            alert(val[i] + "값이 입력되지 않았습니다.");
-	            $(arr[i]).focus();
-	         }
-	      }
-	   }
-	   chkName();
-	   chkBir();
-	   chkPass();
-	   chkHp();
-	   chkMail();
-	   
-	}
-
-
 function changePage(){
-	// 2) form submit
 	var fm = document.getElementById("fm");
 	fm.action = "/MemberPj/html/member/memberList.html";
-	// 서블릿을 호출하기도 함
 	fm.method = "post";
 	fm.submit();
 }

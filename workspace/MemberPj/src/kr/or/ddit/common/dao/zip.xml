@@ -5,30 +5,6 @@
 
 <sqlMap namespace="zip">
 
-	<select id="retrieveSidoList" resultClass="kr.or.ddit.common.vo.ZipVO">
-	  SELECT SIDO 
-	    FROM TB_ZIP 
-	GROUP BY SIDO
-	ORDER BY SIDO
-	</select>
-
-	<select id="retrieveGugunList" parameterClass="kr.or.ddit.common.vo.ZipVO" resultClass="kr.or.ddit.common.vo.ZipVO">
-	  SELECT GUGUN 
-	    FROM TB_ZIP
-	   WHERE SIDO = #sido#
-	GROUP BY GUGUN
-	ORDER BY GUGUN
-	</select>
-
-	<select id="retrieveDongList" parameterClass="kr.or.ddit.common.vo.ZipVO" resultClass="kr.or.ddit.common.vo.ZipVO">
-	  SELECT DONG 
-	    FROM TB_ZIP
-	   WHERE SIDO = #sido#
-	     AND GUGUN = #gugun#
-	GROUP BY DONG
-	ORDER BY DONG
-	</select>
-
 	<select id="retrieveZipList" parameterClass="kr.or.ddit.common.vo.ZipVO" resultClass="kr.or.ddit.common.vo.ZipVO">
 	  SELECT  ZIPCODE zipCode
 			, SIDO    sido
@@ -39,9 +15,7 @@
 			, BUNJI   bunji
 			, SEQ	  seq
 	     FROM TB_ZIP
-	   WHERE  SIDO = #sido#
-		  AND GUGUN = #gugun#
-		  AND DONG = #dong#
+	   WHERE  DONG like '%' || #dong#|| '%'
 	 ORDER BY SEQ
 	</select>
 

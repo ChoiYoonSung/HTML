@@ -230,7 +230,6 @@ function makeBunjiSelect(data){
 			+ changeEmptyVal(data[i].bunji) + "</td>"
 			+ "</tr>";
 	}
-	
 	$('#tbBunjiResult tbody').html(strHtml);
 }
 

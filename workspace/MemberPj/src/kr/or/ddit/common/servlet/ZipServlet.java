@@ -30,11 +30,31 @@ public class ZipServlet extends HttpServlet {
 			
 			ZipService zipService = new ZipService();
 			List<ZipVO> list = new ArrayList<ZipVO>();
+			String flag = req.getParameter("flag");
 			
-			ZipVO zipVO = new ZipVO();
-			zipVO.setDong(req.getParameter("dong"));
+			if("GU".equals(flag)) {
+				ZipVO zipVO = new ZipVO();
+				zipVO.setSido(req.getParameter("sido"));
+				
+				list = zipService.retrieveGugunList(zipVO);
+			} else if("DONG".equals(flag)) {
+				ZipVO zipVO = new ZipVO();
+				zipVO.setSido(req.getParameter("sido"));
+				zipVO.setGugun(req.getParameter("gugun"));
+				
+				list = zipService.retrieveDongList(zipVO);
+			} else if("BUNJI".equals(flag)) {
+				ZipVO zipVO = new ZipVO();
+				zipVO.setSido(req.getParameter("sido"));
+				zipVO.setGugun(req.getParameter("gugun"));
+				zipVO.setDong(req.getParameter("dong"));
+				
+				list = zipService.retrieveZipList(zipVO);
+			} else {
+				list = zipService.retrieveSidoList();
+//				zipService.retrieveZipList(groupZip);
+			}
 			
-			list = zipService.retrieveZipList(zipVO);
 			
 			req.setAttribute("list",list);
 			RequestDispatcher disp = req.getRequestDispatcher("/html/common/zipListResult.jsp");

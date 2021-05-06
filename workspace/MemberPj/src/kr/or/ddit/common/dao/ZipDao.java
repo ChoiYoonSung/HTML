@@ -14,6 +14,18 @@ public class ZipDao extends BaseDao {
 	public ZipDao() {
 		smc = super.getSqlMapClient();
 	}
+
+	public List<ZipVO> retrieveSidoList() throws SQLException {
+		return smc.queryForList("zip.retrieveSidoList");
+	}
+	
+	public List<ZipVO> retrieveGugunList(ZipVO zipVO) throws SQLException {
+		return smc.queryForList("zip.retrieveGugunList", zipVO);
+	}
+	
+	public List<ZipVO> retrieveDongList(ZipVO zipVO) throws SQLException {
+		return smc.queryForList("zip.retrieveDongList", zipVO);
+	}
 	
 	public List<ZipVO> retrieveZipList(ZipVO zipVO) throws SQLException {
 		return smc.queryForList("zip.retrieveZipList", zipVO);

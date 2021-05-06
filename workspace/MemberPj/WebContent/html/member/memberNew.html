@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<h2>회원가입 예제</h2>
+			<h2>회원가입</h2>
 			<form class="form-horizontal" action="/action_page.php" id="fm">
 				<div class="form-group form-inline">
 					<label class="control-label col-sm-2" for="memId">ID:</label>
@@ -29,7 +29,6 @@
 					<div class="col-sm-5">
 						<input type="text" class="form-control" id="memName"
 							placeholder="이름" name="memName" onchange="">
-							<span id="spanMemName" style="display: none">이름을 다시 입력해 주십시오.</span>
 					</div>
 				</div>
 				<div class="form-group">
@@ -37,7 +36,6 @@
 					<div class="col-sm-5">
 						<input type="password" class="form-control" id="memPass"
 							placeholder="비밀번호" name="memPass">
-						<span id="spanMemPass" style="display: none">비밀번호를다시 입력해 주십시오.</span>
 					</div>
 				</div>
 				<div class="form-group">
@@ -52,15 +50,14 @@
 					<div class="col-sm-5">
 						<input type="date" class="form-control" id="memBir"
 							placeholder="Email" name="memBir">
-						<span id="spanMemBir" style="display: none">생년월일을 다시 입력해 주십시오.</span>
 					</div>
 				</div>
+				
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="memMail">Email:</label>
 					<div class="col-sm-5">
 						<input type="email" class="form-control" id="memMail"
 							placeholder="Email" name="memMail">
-						<span id="spanMemMail" style="display: none">이메일을 다시 입력해 주십시오.</span>
 					</div>
 				</div>
 				<div class="form-group">
@@ -68,7 +65,6 @@
 					<div class="col-sm-5">
 						<input type="text" class="form-control" id="memHp"
 							placeholder="Phone Number" name="memHp">
-						<span id="spanMemHp" style="display: none">전화번호를 다시 입력해 주십시오.</span>
 					</div>
 				</div>
 				<div class="form-group">
@@ -83,6 +79,7 @@
 						</div>
 					</div>
 				</div>
+				
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="memComment">비고:</label>
 					<div class="col-sm-5">
@@ -90,14 +87,22 @@
 					</div>
 				</div>
 				
-				<input type="hidden" name="flag" id="formFlag">
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="button" class="btn btn-default" onclick="save()">Submit</button>
-						<button type="reset" class="btn btn-default">Reset</button>
+						<div class="checkbox">
+							<label><input type="checkbox" name="remember">
+								Remember me</label>
+						</div>
 					</div>
 				</div>
+				<input type="hidden" name="flag" id="formFlag">
 			</form>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="button" class="btn btn-default" onclick="save()">Submit</button>
+					<button type="reset" class="btn btn-default">Reset</button>
+				</div>
+			</div>
 		</div>
 
 		<!-- 우편번호 Modal -->
@@ -111,15 +116,11 @@
 						<h4 class="modal-title">주소 검색</h4>
 					</div>
 					<div class="modal-body">
-						<div>
-							<p>동 이름을 입력하세요</p>
-						</div>
-						<div class="form-inline">
-							<input type="text" class="form-control" id="zipResearch" name="zipResearch">
-							<button type="button" class="btn btn-default" id="btnZipResearch" onclick="zipResearch()">검색</button>
-						</div>
+					<p>우편 번호를 검색합니다.</p><br>
+					동 이름을 입력하세요<br>
+					<input type="text" id="zipResult" name="zipResult"> 
 					</div>
-					<div id="divBunjiResult" class="modal-body" style="display: none">
+					<div id="divBunjiResult" style="display: none">
 						<table id="tbBunjiResult" class="table table-striped">
 							<thead>
 								<tr onclick="">
